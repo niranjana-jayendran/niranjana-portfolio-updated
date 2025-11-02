@@ -17,9 +17,7 @@ import {
   Users,
 } from "lucide-react";
 
-// -------------------------
-// Lightweight UI primitives
-// -------------------------
+
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
   const base = "inline-flex items-center justify-center rounded-2xl border transition px-3 py-2 text-sm";
   const styles = {
@@ -42,12 +40,10 @@ const CardHeader = ({ children }) => <div className="px-5 pt-5">{children}</div>
 const CardTitle = ({ children, className = "" }) => <h3 className={`font-semibold ${className}`}>{children}</h3>;
 const CardContent = ({ children, className = "" }) => <div className={`px-5 pb-5 ${className}`}>{children}</div>;
 
-// =========================
-// DATA (resume-aligned)
-// =========================
+
 const ABOUT = {
   name: "Niranjana Jayendran",
-  tagline: "National student leader • AI-for-good researcher • Community builder",
+  tagline: "Student advocate • Mindfulness instructor • Community builder",
   blurb:
     "National Secretary of BPA’s Secondary Division serving ~60,000 students. I design trustworthy, human-centered tech and scalable student programs; co-founded my school’s DECA chapter (ICDC in year one) and lead breathing/stress-management workshops for 1,000+ educators and students.",
   highlights: [
@@ -57,7 +53,7 @@ const ABOUT = {
     "Bharatanatyam Arangetram; performer at World Culture Festival (National Mall)",
   ],
   contacts: {
-    email: "niranjana@example.com",
+    email: "niranjanajayendran@gmail.com",
     linkedin: "https://www.linkedin.com/",
     resume: "#",
   },
@@ -111,7 +107,7 @@ const BUSINESS = [
   },
 ];
 
-// Rich awards data (fill from résumé; add more entries as needed)
+
 const AWARDS = [
   // Debate / Speech
   { title: "NSDA Extemporaneous Speaking — National Qualifier (1st)", org: "NSDA", level: "National", year: 2025, rank: "1st", notes: "Qualified via district championship" },
@@ -492,7 +488,7 @@ const AwardsList = () => {
           </li>
         ))}
       </ul>
-      <p className="text-xs opacity-60 mt-2">Missing or off by a line? Paste the exact awards block from your résumé and I’ll slot them in verbatim.</p>
+      <p className="text-xs opacity-60 mt-2">
     </div>
   );
 };
@@ -545,7 +541,7 @@ const Community = () => (
   </Section>
 );
 
-// Leadership Story with succinct bullets per phase
+// Leadership Story 
 const LEADERSHIP = [
   {
     phase: "National BPA — Secretary",
@@ -752,7 +748,7 @@ export default function App() {
         <Fun />
         <Contact />
       </main>
-      <footer className="py-12 text-center text-xs opacity-70">Built as a single-file React app. Print-friendly and mobile-first.</footer>
+      <footer className="py-12 text-center text-xs opacity-70">
     </div>
   );
 }
