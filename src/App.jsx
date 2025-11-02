@@ -1,4 +1,4 @@
-mport React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Award as AwardIcon, Briefcase, Cpu, ChevronDown, ChevronRight, GraduationCap, Star, Mail, Linkedin, FileText, Link as LinkIcon, Users2 } from "lucide-react";
 
