@@ -54,7 +54,7 @@ const ABOUT = {
   ],
   contacts: {
     email: "niranjanajayendran@gmail.com",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/niranjana-jayendran-ab5576276/",
     resume: "#",
   },
 };
