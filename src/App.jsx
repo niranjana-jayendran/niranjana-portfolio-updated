@@ -429,7 +429,7 @@ const WorkCard = ({ item }) => {
   );
 };
 
-// Enhanced Awards list with details + search + sort
+// awards list
 const AwardsList = () => {
   const [q, setQ] = useState("");
   const [sort, setSort] = useState("yearDesc");
@@ -488,7 +488,6 @@ const AwardsList = () => {
           </li>
         ))}
       </ul>
-      <p className="text-xs opacity-60 mt-2">
     </div>
   );
 };
@@ -749,6 +748,8 @@ export default function App() {
         <Contact />
       </main>
       <footer className="py-12 text-center text-xs opacity-70">
+        {new Date().getFullYear()} Niranjana Jayendran
+      </footer>
     </div>
   );
 }
