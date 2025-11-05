@@ -669,7 +669,7 @@ const COMMUNITY = [
     ],
   },
   {
-    image: waving
+    image: waving,
     title: "BPA Student Certification Series (Designer)",
     org: "BPA National / Chapters",
     details: [
