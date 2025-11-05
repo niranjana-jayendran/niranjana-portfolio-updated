@@ -16,7 +16,7 @@ import {
   Link as LinkIcon,
   Users2,
 } from "lucide-react";
-import headshot from ".assets/about_headhsot.png";
+import headshot from "./assets/about_headshot.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
