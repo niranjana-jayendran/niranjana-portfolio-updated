@@ -590,7 +590,7 @@ const FlipCard = ({ image, title, org, details = [] }) => {
 
 const AwardsList = () => {
   const [q, setQ] = useState("");
-  const [sort, setSort] = useState("yearDesc");
+  const [sort, setSort] = useState("gradeDesc");
 
   const filtered = useMemo(() => {
     const needle = q.toLowerCase();
@@ -603,8 +603,8 @@ const AwardsList = () => {
 
   const sorted = useMemo(() => {
     const arr = [...filtered];
-    if (sort === "yearDesc") arr.sort((a, b) => (b.year || 0) - (a.year || 0));
-    if (sort === "yearAsc") arr.sort((a, b) => (a.year || 0) - (b.year || 0));
+    if (sort === "gradeDesc") arr.sort((a, b) => (b.grade || 0) - (a.grade || 0));
+    if (sort === "gradeAsc") arr.sort((a, b) => (a.grade || 0) - (b.grade || 0));
     if (sort === "level") arr.sort((a, b) => (a.level || "").localeCompare(b.level || ""));
     return arr;
   }, [filtered, sort]);
@@ -623,8 +623,8 @@ const AwardsList = () => {
           onChange={(e) => setSort(e.target.value)}
           className="px-3 py-2 rounded-xl border border-black/10 bg-white/70 backdrop-blur text-sm"
         >
-          <option value="yearDesc">Newest</option>
-          <option value="yearAsc">Oldest</option>
+          <option value="gradeDesc">Newest</option>
+          <option value="gradeAsc">Oldest</option>
           <option value="level">By Level</option>
         </select>
         <span className="text-xs opacity-70 ml-auto">{sorted.length} results</span>
@@ -638,7 +638,7 @@ const AwardsList = () => {
             <div className="flex items-center gap-2">
               <AwardIcon className="h-4 w-4 opacity-70" />
               <span className="text-sm font-medium">{a.title}</span>
-              <span className="ml-auto text-xs opacity-60">{a.year || "—"}</span>
+              <span className="ml-auto text-xs opacity-60">{a.grade || "—"}</span>
             </div>
             <div className="text-xs opacity-80 flex flex-wrap gap-3 pl-6">
               <span>
