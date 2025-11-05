@@ -330,11 +330,20 @@ const ACTIVITIES = [
 ];
 
 const AWARDS = [
-  { title: "NSDA Extemporaneous Speaking — National Qualifier (1st)", org: "NSDA", level: "National", year: 2025, rank: "1st", notes: "Qualified via district championship" },
-  { title: "BPA SLC — Economic Research (Team)", org: "BPA Florida", level: "State", year: 2024, rank: "2nd", notes: "150+ teams statewide" },
-  { title: "DECA States — Travel & Tourism TDM", org: "DECA", level: "State", year: 2025, rank: "1st", notes: "Advanced to ICDC" },
-  { title: "RCM Piano — First Class Honors", org: "Royal Conservatory of Music", level: "National", year: 2023, rank: "Honors", notes: "Multiple First Class Honors" },
+  { title: "x2 First Class Honors, 2x Honors", organization: "Royal Conservatory of Music, Piano", level: "National", grade: "8th-11th grades", notes: "Earned four national-level distinctions through juried RCM performance exams assessing technical mastery, sight reading, and musicianship (≥ 85th percentile)."},
+  { title: "x2 Silved Medalist, x1 Bronze Medalist (90th percentile)", organization: "Le Grand Concours, French", level: "National", grade:"8th-10th grades", notes: "Placed in the top 10% nationally in a standardized French proficiency test three years consecutively, demonstrating linguistic skill and cultural fluency."},
+  { title: "1st Place - National Qualifiers, Extemporaneous Speaking", organization: "National Speech and Debate Association", level: "Regional", grade: "10th grade", notes: "Won first place at the district qualifiers in extemporaneous speech, earning advancement to the National tournament on behalf of the school."},
+  { title: "Semifinalist - Novice States, Extemporaneous Speaking", organization: "National Speech and Debate Association", level: "State", grade: "10th grade", notes: "Ranked among the top 24 speakers in extemporaneous speaking statewide in the first year of competing."},
+  { title: "2nd Place - State Leadership Conference, Economic Research", organization: "Business Professional of America", level: "State", grade: "10th grade", notes: "Placed 2nd statewide among 50+ individuals for an original paper and presentation connecting macroeconomic trends to practical market applications."},
+  { title: "3rd Place - State Leadership Conference, Presentation Team", organization: "Business Professionals of America", level: "State", grade: "10th grade", notes: "Placed 3rd statewide among 40+ teams for developing and presenting a proposal regarding the evolving local labor market to a mock Chamber of Commerce; advanced to nationals."},
+  { title: "National Honor Society", organization: "Pine View School", level: "State", grade: "10th - 12th grades", notes: "Selected for academic excellence, leadership, and service; contributed over 100 volunteer hours across school and community initiatives."},
+  { title: "1st Place - Regionals", organization: "Poetry Out Loud", level: "Regional", grade: "11th grade", notes: "Named regional champion in Poetry Out Loud for expressive performance and interpretation of both classical and modern works, advancing to the state finals."},
+  { title: "1st Place - State Career Development Conference, Travel and Tourism Decision Making", organization: "DECA", level: "State", grade: "11th grade", notes: "Won DECA State Championship in a business case analysis event, surpassing ~100 teams, and advanced to Internationals in the first year of competing."},
+  { title: "1st Place - State Leadership Conference, Extemporaneous Speech", organization: "Business Professionals of America", level: "State", grade: "11th grade", notes: "Ranked first place statewide for impromptu professional speaking; recognized for originality and impactful delivery, and advanced to nationals."},
+  { title: "AP Scholar with Distinction", organization: "College Board", level: "National", grade: "11th grade", notes: "Awarded for scores of all 4s and 5s in 7 AP exams, demonstrating mastery across disciplines."},
+  { title: "National Merit Semifinalist", organization: "National Merit Scholarship Corporation", level: "National", grade: "12th grade", notes: "Recognized as top 1% of U.S high school students based on PSAT/NMSQT score; received a perfect 1520 (99th percentile)."},
 ];
+//note: change the org --> organization, take rank out, year --> grade, make notes underneath
 
 const TABS = [
   { id: "engineering", icon: Cpu, label: "Engineering" },
@@ -509,7 +518,7 @@ const WorkCard = ({ item }) => {
       <CardHeader className="pb-2">
         <CardTitle className="text-base flex items-center justify-between">
           <span>{item.title}</span>
-          <span className="text-xs opacity-60">{item.org}</span>
+          <span className="text-xs opacity-60">{item.organization}</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -586,7 +595,7 @@ const AwardsList = () => {
   const filtered = useMemo(() => {
     const needle = q.toLowerCase();
     return AWARDS.filter((a) =>
-      [a.title, a.org, a.level, a.rank, a.notes, a.year?.toString()].some((v) =>
+      [a.title, a.organization, a.level, a.notes, a.grade?.toString()].some((v) =>
         (v || "").toLowerCase().includes(needle)
       )
     );
@@ -606,7 +615,7 @@ const AwardsList = () => {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search awards (title, org, level, year)"
+          placeholder="Search awards (title, organization, level, grade)"
           className="w-full md:w-80 px-3 py-2 rounded-xl border border-black/10 bg-white/70 backdrop-blur text-sm"
         />
         <select
@@ -633,22 +642,16 @@ const AwardsList = () => {
             </div>
             <div className="text-xs opacity-80 flex flex-wrap gap-3 pl-6">
               <span>
-                <strong>Org:</strong> {a.org}
+                <strong>Organization:</strong> {a.organization}
               </span>
               <span>
                 <strong>Level:</strong> {a.level}
-              </span>
-              <span>
-                <strong>Rank:</strong> {a.rank}
               </span>
               {a.notes && <span className="opacity-80">{a.notes}</span>}
             </div>
           </li>
         ))}
       </ul>
-      <p className="text-xs opacity-60 mt-2">
-        Missing or off by a line? Paste the exact awards block from your résumé and I’ll slot them in verbatim.
-      </p>
     </div>
   );
 };
