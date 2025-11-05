@@ -16,6 +16,7 @@ import {
   Link as LinkIcon,
   Users2,
 } from "lucide-react";
+import headshot from ".assets/about_headhsot.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -905,11 +906,10 @@ export default function App() {
             <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center">
               {/* headshot from src/assets/about_headshot.png (keep rounded corners) */}
               <img
-                src="/AAGLlQSV3bk_1746582982177.png"
+                src={headshot}
                 alt="Niranjana headshot"
                 className="w-full h-full object-cover rounded-2xl"
               />
-
             </Card>
           </div>
         </Section>
