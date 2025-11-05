@@ -17,6 +17,7 @@ import {
   Users2,
 } from "lucide-react";
 import headshot from "./assets/about_headshot.png";
+import waving from "./assets/bpa_waving.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -668,7 +669,12 @@ const COMMUNITY = [
     ],
   },
   {
-    image: "/src/assets/community/certification.jpg",
+    imaage: 
+      <img
+          src={waving}
+          alt="Niranjana headshot"
+          className="w-full h-full object-cover rounded-2xl"
+          />
     title: "BPA Student Certification Series (Designer)",
     org: "BPA National / Chapters",
     details: [
