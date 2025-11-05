@@ -669,12 +669,7 @@ const COMMUNITY = [
     ],
   },
   {
-    imaage: 
-      <img
-          src={waving}
-          alt="Niranjana headshot"
-          className="w-full h-full object-cover rounded-2xl"
-          />
+    image: "/src/assets/bpa_waving.png",
     title: "BPA Student Certification Series (Designer)",
     org: "BPA National / Chapters",
     details: [
