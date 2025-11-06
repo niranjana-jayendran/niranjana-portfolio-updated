@@ -760,7 +760,7 @@ const Community = () => (
 //  { image: "/src/assets/fun/dosa.jpg", caption: "Forever tuning dosa crispiness ratios." },
 //  { image: "/src/assets/fun/piano.jpg", caption: "RCM piano honors; love to accompany." },
 //  { image: "/src/assets/fun/coach.jpg", caption: "Tutoring & peer coaching for clarity." },
-];
+//];
 
 const FunImageCard = ({ image, caption }) => (
   <div>
@@ -869,7 +869,7 @@ const Timeline = ({ items, active = 0, onSelect }) => (
 //      ))}
 //    </div>
 //  </Section>
-);
+//);
 
 const Contact = () => (
   <Section id="contact" title="Contact & Downloads" icon={Mail}>
