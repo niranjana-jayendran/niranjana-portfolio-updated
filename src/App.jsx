@@ -23,6 +23,12 @@ import schoolhouse from "./assets/schoolhouse.png";
 import bharatanatyam from "./assets/bharatanatyam.png";
 import fablab from "./assets/fablab.png";
 
+async function openResumePdf() {
+  const mod = await import("./assets/Resumé.pdf");
+  const url = mod.default || mod;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
   const base =
@@ -175,9 +181,7 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <a href="#contact" className="text-sm">
-            <Button size="sm">Resume</Button>
-          </a>
+          <Button size="sm" onClick={openResumePdf}>Resume</Button>
         </nav>
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -209,14 +213,14 @@ const Navbar = () => {
 
 const ABOUT = {
   name: "Niranjana Jayendran",
-  tagline: "passionate about: books • breath • business",
+  tagline: "passionate about: books • breath • business !",
   blurb:
     "National Secretary of BPA’s Secondary Division serving ~60,000 students. I design trustworthy, human‑centered tech and scalable student programs; co‑founded my school’s DECA chapter (ICDC in year one) and lead breathing/stress‑management workshops for 1,000+ educators and students.",
   highlights: [
-    "+54% state membership growth (BPA Florida)",
-    "AP Research: R² 0.92 predicting recall timing from ADR sentiment",
-    "ICDC qualification in DECA’s first year at my school",
-    "Bharatanatyam Arangetram; performer at World Culture Festival (National Mall)",
+    "Business - I serve as BPA's National Secretary, founded our school's DECA chapter, and lead the Entrepreneurship Club, focusing on leadership training and fostering students' ideas.",
+    "Applied Computer Science and Research - I've worked on market sizing, customer meetings, and model development at IntelliEase AI; prototyped model and designed website at SoulMender; and trained a sentiment model estimating drug-recall timing for AP Research.",
+    "Stress-Management Teaching - Outside of work, I'm passionate about sharing the techniques that have helped me increase my capacity and decrease my stress: breathing! I've delivered keynote speeches to educators on the importance of such techniques in schools and have facilitated workshops for students locally.",
+    "Arts and Community - My heritage and community is incredibly important to me: I am a proud Bharatanatyam (South Indian Clasical Dance) Soloist, performing on stages from the National Mall in DC to my backyard for my family!",
   ],
   contacts: {
     email: "niranjanajayendran@gmail.com",
@@ -258,10 +262,15 @@ const COMPUTER_SCIENCE = [
     details: [
       "Created Figma wireframes and UI prototypes for therapist dashboards and patient portals.",
       "Conducted demographic analysis and usability research to inform the MVP design of the patient portal.",
-      "Designed Soulmender's website, adapting its professional design to target the company's audience based on conducted surveys."
     ],
     type: "role",
   },
+  {
+    title: "Website Design",
+    org: "SoulMender AI (Sohum AI)",
+    summary: "Utilizing JavaScript, React, HTML, and CSS, I translated SoulMender's Figma wireframes and customer survey insights into a polished, marketing site catered for potential clients (separate dashboard for therapists to join and for clients to sign up) and investors",
+    type: "project"
+  }
 ];
 
 // BUSINESS / AWARDS and TABS for filters
@@ -854,13 +863,10 @@ const Contact = () => (
           <CardTitle className="text-base">Résumé</CardTitle>
         </CardHeader>
         <CardContent className="text-sm">
-          <p className="opacity-80">One‑page PDF tailored for admissions.</p>
           <div className="mt-3">
-            <Button asChild>
-              <a href={ABOUT.contacts.resume}>
-                <FileText className="h-4 w-4 mr-2" />
-                Download
-              </a>
+            <Button onClick={openResumePdf}>
+              <FileText className="h-4 w-4 mr-2"/>
+              Download
             </Button>
           </div>
         </CardContent>
