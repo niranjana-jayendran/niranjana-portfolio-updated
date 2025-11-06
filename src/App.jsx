@@ -219,9 +219,9 @@ const ABOUT = {
     "Stress-Management Teaching - Outside of work, I'm passionate about sharing the techniques that have helped me increase my capacity and decrease my stress: breathing! I've delivered keynote speeches to educators on the importance of such techniques in schools and have facilitated workshops for students locally.",
     "Arts and Community - My heritage and community is incredibly important to me: I am a proud Bharatanatyam (South Indian Clasical Dance) Soloist, performing on stages from the National Mall in DC to my backyard for my family!",
   ],
-  highlights: [
-    "",
-  ],
+//  highlights: [
+//    "",
+//  ],
   contacts: {
     email: "niranjanajayendran@gmail.com",
     linkedin: "https://www.linkedin.com/in/niranjana-jayendran-ab5576276/",
