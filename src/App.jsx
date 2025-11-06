@@ -20,7 +20,7 @@ import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
-import bharatanatyam from "./assets/image.png";
+import bharatanatyam from "./assets/bharatanatyam.JPG";
 import fablab from "./assets/fablab.png";
 
 // Lightweight UI primitives
@@ -753,7 +753,7 @@ const Community = () => (
 // =========================
 // FUN FACTS — IMAGE CARDS 
 // =========================
-const FUN_MEDIA = [
+//const FUN_MEDIA = [
   { image: "/src/assets/fun/books.jpg", caption: "Always reading — business & psych." },
   { image: "/src/assets/fun/breath.jpg", caption: "90‑second breath reset before talks." },
   { image: "/src/assets/fun/dance.jpg", caption: "Bharatanatyam = focus + joy." },
@@ -861,14 +861,14 @@ const Timeline = ({ items, active = 0, onSelect }) => (
   </ol>
 );
 
-const Fun = () => (
-  <Section id="fun" title="Fun Facts" icon={Star}>
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {FUN_MEDIA.map((m, i) => (
-        <FunImageCard key={i} image={m.image} caption={m.caption} />
-      ))}
-    </div>
-  </Section>
+//const Fun = () => (
+//  <Section id="fun" title="Fun Facts" icon={Star}>
+//    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+//      {FUN_MEDIA.map((m, i) => (
+//        <FunImageCard key={i} image={m.image} caption={m.caption} />
+//      ))}
+//    </div>
+//  </Section>
 );
 
 const Contact = () => (
