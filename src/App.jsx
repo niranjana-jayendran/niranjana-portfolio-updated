@@ -509,11 +509,12 @@ const WorkCard = ({ item }) => {
   return (
     <Card className="bg-white/80 backdrop-blur border-black/10 shadow">
       <CardHeader className="pb-2">
-        <CardTitle className="text-base flex items-center justify-between">
-          <span>{item.title}</span>
-          <span className="text-xs opacity-60">{item.organization}</span>
-        </CardTitle>
+        <CardTitle className="text-base">{item.title}</CardTitle>
+        <div className="mt-0.5 text-xs opacity-60">
+          {item.org ?? item.organization}
+        </div>
       </CardHeader>
+
       <CardContent>
         <p className="text-sm opacity-80">{item.summary}</p>
         <button
