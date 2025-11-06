@@ -754,12 +754,12 @@ const Community = () => (
 // FUN FACTS — IMAGE CARDS 
 // =========================
 //const FUN_MEDIA = [
-  { image: "/src/assets/fun/books.jpg", caption: "Always reading — business & psych." },
-  { image: "/src/assets/fun/breath.jpg", caption: "90‑second breath reset before talks." },
-  { image: "/src/assets/fun/dance.jpg", caption: "Bharatanatyam = focus + joy." },
-  { image: "/src/assets/fun/dosa.jpg", caption: "Forever tuning dosa crispiness ratios." },
-  { image: "/src/assets/fun/piano.jpg", caption: "RCM piano honors; love to accompany." },
-  { image: "/src/assets/fun/coach.jpg", caption: "Tutoring & peer coaching for clarity." },
+//  { image: "/src/assets/fun/books.jpg", caption: "Always reading — business & psych." },
+//  { image: "/src/assets/fun/breath.jpg", caption: "90‑second breath reset before talks." },
+//  { image: "/src/assets/fun/dance.jpg", caption: "Bharatanatyam = focus + joy." },
+//  { image: "/src/assets/fun/dosa.jpg", caption: "Forever tuning dosa crispiness ratios." },
+//  { image: "/src/assets/fun/piano.jpg", caption: "RCM piano honors; love to accompany." },
+//  { image: "/src/assets/fun/coach.jpg", caption: "Tutoring & peer coaching for clarity." },
 ];
 
 const FunImageCard = ({ image, caption }) => (
