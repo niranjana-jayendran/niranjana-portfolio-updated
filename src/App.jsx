@@ -214,12 +214,12 @@ const ABOUT = {
   name: "Niranjana Jayendran",
   tagline: "passionate about: books • breath • business !",
   blurb:
-    "National Secretary of BPA’s Secondary Division serving ~60,000 students. I design trustworthy, human‑centered tech and scalable student programs; co‑founded my school’s DECA chapter (ICDC in year one) and lead breathing/stress‑management workshops for 1,000+ educators and students.",
-  highlights: [
     "Business - I serve as BPA's National Secretary, founded our school's DECA chapter, and lead the Entrepreneurship Club, focusing on leadership training and fostering students' ideas.",
     "Applied Computer Science and Research - I've worked on market sizing, customer meetings, and model development at IntelliEase AI; prototyped model and designed website at SoulMender; and trained a sentiment model estimating drug-recall timing for AP Research.",
     "Stress-Management Teaching - Outside of work, I'm passionate about sharing the techniques that have helped me increase my capacity and decrease my stress: breathing! I've delivered keynote speeches to educators on the importance of such techniques in schools and have facilitated workshops for students locally.",
     "Arts and Community - My heritage and community is incredibly important to me: I am a proud Bharatanatyam (South Indian Clasical Dance) Soloist, performing on stages from the National Mall in DC to my backyard for my family!",
+  highlights: [
+    "",
   ],
   contacts: {
     email: "niranjanajayendran@gmail.com",
