@@ -20,6 +20,7 @@ import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
+import bharatanatyma from "./assets/bharatanatyam.jpg";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -687,12 +688,12 @@ const AwardsList = () => {
 const COMMUNITY = [
   {
     image: breathing,
-    title: "Breath & Stress‑Management Workshops",
-    org: "Art of Living / Schools",
+    title: "Youth Ambassador",
+    org: "Art of Living / SKY Schools",
     details: [
-      "Keynoted to 1,000+ educators at NSBA; led student & staff sessions.",
-      "Designed activities to build calm focus in under 2 minutes.",
-      "Scaled talks to multi‑school audiences with actionable worksheets.",
+      "Breath-work instructor and keynote speaker; lead school stress-management programs."
+      "   - Delivered a keynote to 1,000+ educators on evidence-based stress management breath techniques in schools for the National School Board Association (NSBA) annual conference.",
+      "   - Facilitated and organized local Art of Living programs for students and staff, teaching practical breathing and mindfulness techniques."
     ],
   },
   {
@@ -718,10 +719,12 @@ const COMMUNITY = [
   {
     image: bharatanatyam,
     title: "Professional Dancer",
-    org: "Faulhaber Fabrication Lab",
+    org: "Sai Nrityalaya School for Dance",
     details: [
-      "Hands‑on workshops for elementary students; building confidence.",
-      "Simple scaffolds for early wins; safety‑first shop habits.",
+      "Classical Bharatanatyam dancer, soloist and lead performer, with a completed Arangetram and appearances in large-scale productions and cultural festivals.",
+      "   - Performed as a part of the 2023 World Culture Festival on the National Mall, D.C. before an audience of 1 million people.",
+      "   - Completed a 3-hour solo Arangetram recital for 750+ attendees, showcasing mastery after 12 years of training and a final year of intensive preparation.",
+      "   - Selected as lead performer in 4 productions at the Sarasota Opera House, a historic center for the performing arts."
     ],
   },
   {
