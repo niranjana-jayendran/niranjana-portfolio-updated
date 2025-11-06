@@ -20,7 +20,7 @@ import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
-import bharatanatyma from "./assets/dance.png";
+import bharatanatyam from "./assets/dance.png";
 import fablab from "./assets/fablab.png";
 
 // Lightweight UI primitives
