@@ -20,7 +20,8 @@ import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
-import bharatanatyma from "./assets/dance.jpg";
+import bharatanatyma from "./assets/dance.png";
+import fablab from "./assets/fablab.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -728,12 +729,13 @@ const COMMUNITY = [
     ],
   },
   {
-    image: "/src/assets/community/shark.jpg",
-    title: "Entrepreneurship Club ‘Shark Tank’",
-    org: "Pine View School",
+    image: fablab,
+    title: "STEM Mentor",
+    org: "Faulhaber Fabrication Lab",
     details: [
-      "Organized school‑wide competition; raised $1,000+ for ventures.",
-      "Coached teams on problem/solution fit and storytelling.",
+      "STEM education volunteer and curriculum contributor, leading hands-on chemistry and coding sessions for elementary students.",
+      "   - Led hands-on fabrication sessions for 50+ elementary students, introducing foundational chemistry and coding principles.",
+·   	"   - Volunteered 50+ hours leading hands-on STEM education sessions for elementary students and contributed to curriculum development to expand access to foundational STEM concepts.",
     ],
   },
 ];
