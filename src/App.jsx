@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
+import breathing from "./assets/breathing.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -684,7 +685,7 @@ const AwardsList = () => {
 
 const COMMUNITY = [
   {
-    image: "/src/assets/community/breath.jpg",
+    image: breathing,
     title: "Breath & Stress‑Management Workshops",
     org: "Art of Living / Schools",
     details: [
