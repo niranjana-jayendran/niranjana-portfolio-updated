@@ -25,7 +25,7 @@ import fablab from "./assets/fablab.png";
 import resumePdf from "./assets/Resumé.pdf";
 
 function openResumePdf() {
-  window.open(resume Pdf, "_blank", "noopener,noreferrer");
+  window.open(resumePdf, "_blank", "noopener,noreferrer");
 };
 
 // Lightweight UI primitives
