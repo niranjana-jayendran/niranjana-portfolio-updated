@@ -221,63 +221,88 @@ const ABOUT = {
   },
 };
 
-const ENGINEERING = [
+const COMPUTER_SCIENCE = [
   {
     title: "Predicting Drug Recall Timing from Public Signals",
     org: "AP Research",
     summary:
-      "Estimated recall timing from ADR discussions using sentiment and anomaly patterns; emphasized interpretability and ethical limits.",
+      "Conducted independent research analyzing whether sentiment on social media can predict FDA pharmaceutical drug recalls, bridging machine learning and public health.",
     details: [
-      "Framed as timing (days) rather than a simple yes/no.",
-      "Reported R² and MAE; documented boundaries and use‑cases.",
+      "Built a hybrid natural language processing model combining sentiment anlysis models TextBlob and RoBERTa to quantify tone and subjectivity in 1K+ adverse drug reaction posts.",
+      "Cleaned, tokenized, and engineered linguistics features in Python (using padas, NumPy, NLTK) for model input and trained a decision forest regression model to predict recall dates.",
     ],
     type: "project",
   },
   {
-    title: "Automation that Earns Trust in Small Businesses",
+    title: "Market Development and Customer Success Intern",
     org: "IntelliEase AI Solutions",
     summary:
-      "Mapped service workflows and added audit trails, checkpoints, and human‑in‑the‑loop steps; pilot billing errors reduced ≈50% and adoption increased.",
+      "Led IntelliEase's early go-to-market and customer growth: sizing the market, building an SMB pipeline, running customer success/feedback loops, and launching the company's first website to establish its presence.",
     details: [
-      "Co‑designed guardrails and exception handling with owners.",
-      "Focused on restarts, opt‑outs, and time‑to‑first‑value.",
+      "Identified $3M revenue potential across Florida and built a data-driven prospect pipeline of 100+ SMBs.",
+      "Led customer success meetings, collected client feedback, and integrated insights into AI marketing strategy.",
+      "Represented the company in client sessions to strengthen partnerships and communicate product value.",
+      "Launched IntelliEase's first official website, creating its professional digital presence."
     ],
-    type: "project",
+    type: "role",
   },
   {
-    title: "Clinician Dashboard for Transparent Suggestions",
-    org: "SoulMender AI",
+    title: "Marketing and Design Intern",
+    org: "SoulMender AI (Sohum AI)",
     summary:
-      "Prototyped therapist‑facing flows with clear rationale for suggestions; aligned UI with clinician expectations and safety.",
-    details: ["Interviewed stakeholders; prioritized explain‑why patterns."],
-    type: "project",
+      "Led UX research and prototyping for therapist and patient portals, turning demographic and usability insights into Figma wireframes that defined the minimum viable product.",
+    details: [
+      "Created Figma wireframes and UI prototypes for therapist dashboards and patient portals.",
+      "Conducted demographic analysis and usability research to inform the MVP design of the patient portal.",
+      "Designed Soulmender's website, adapting its professional design to target the company's audience based on conducted surveys."
+    ],
+    type: "role",
   },
 ];
 
 // BUSINESS / ACTIVITIES / AWARDS and TABS for filters
 const BUSINESS = [
   {
-    title: "BPA National Secretary (Secondary Division)",
+    title: "BPA Leadership (National, State, and Chapter)",
     org: "Business Professionals of America",
     summary:
-      "Programs for ~60,000 students: refreshed Student Certification Series, launched cross‑state Buddy System, co‑designed National Leadership Summit workshops.",
-    details: ["Scaled communications and reusable toolkits for officers."],
+      "Served as National Secretary of Secondary Division, Florida State President, and Chapter President, impacting over 60,000 students globally.",
+    details: [
+      "National Secretary:",
+      "   - Elected to serve as student executive leading BPA's 60,000-member Secondary Division.",
+      "   - Launhed cross-state Buddy System program connecting international, national, and state chapters to foster collaboration and mentorship.",
+      "   - Revamped Student Certification Series and co-designed the Student Leadership Summit, strengthening leadership and personal development through leading workshops on communication and branding.",
+      "Florida State President",
+      "   - Managed 1,500-member state association; grew membership by 54% through targeted chapter support and outreach initiatives.",
+      "   - Planned and co-hosted a 500-attendee State Leadership Conference."
+    ],
     type: "role",
   },
   {
-    title: "Florida BPA President — Membership +54%",
-    org: "BPA Florida",
+    title: "DECA Co-founder & President of Chapter",
+    org: "DECA",
     summary:
-      "Managed ~1,500‑member association; planned 500‑attendee SLC; built advisor coalition and clear role guides to sustain growth.",
-    details: ["Student‑led ops with measurable engagement targets."],
+      "Co-launched our school's first DECA chapter and managed recruiting, setting officer roles, and training members in preparation for competition.",
+    details: [
+      "Grew membership to 40 students within the first year after founding.",
+      "Led team to 2nd place at districts, 1st place at states, and qualification for the international tournament in year one.",
+      "Established officer structure, training resources, and mentorship programs that set the foundation for sustainable growth and future leadership."
+    ],
     type: "role",
   },
   {
-    title: "DECA Co‑founder & President (ICDC Year One)",
-    org: "Pine View School",
+    title: "President, former Vice President",
+    org: "Entrepreneurship Club, Pine View School",
     summary:
-      "Built training pipeline, event selection strategy, and peer coaching; chapter grew to 40 and advanced to ICDC in year one.",
-    details: ["Mentored teams on research, presentation, and role‑play."],
+      "Led Pine View's Entrepreneurship Club, expanding the school-wide Shark Tank program, supporting student ventures, and providing funding and workshops on entrepreneurship.",
+    details: 
+    [
+      "President:",
+      "   - Oversaw development of student-led ventures and expanded the Shark Tank program into a recurring, school-wide program.",
+      "Vice President:",
+      "   - Raised $1,000 in funding through faculty collaboration and external outreach.",
+      "   - Coordinated workshops to introduce students to core principles of entrepreneurship."
+    ],
     type: "role",
   },
 ];
@@ -344,10 +369,10 @@ const AWARDS = [
   { title: "AP Scholar with Distinction", organization: "College Board", level: "National", grade: "11th grade", notes: "Awarded for scores of all 4s and 5s in 7 AP exams, demonstrating mastery across disciplines."},
   { title: "National Merit Semifinalist", organization: "National Merit Scholarship Corporation", level: "National", grade: "12th grade", notes: "Recognized as top 1% of U.S high school students based on PSAT/NMSQT score; received a perfect 1520 (99th percentile)."},
 ];
-//note: change the org --> organization, take rank out, year --> grade, make notes underneath
+//note: fix the grade system- reinstate the year and add grade as another category?
 
 const TABS = [
-  { id: "engineering", icon: Cpu, label: "Engineering" },
+  { id: "Computer Science", icon: Cpu, label: "Computer Science" },
   { id: "business", icon: Briefcase, label: "Business" },
   { id: "activities", icon: Users2, label: "Activities" },
   { id: "awards", icon: AwardIcon, label: "Awards" },
@@ -433,17 +458,17 @@ const Metric = ({ label, value }) => (
 );
 
 const Work = () => {
-  const [activeTab, setActiveTab] = useState("engineering");
+  const [activeTab, setActiveTab] = useState("computer science");
   const [filter, setFilter] = useState("project"); // roles | projects
 
   // Default filter per tab
   useEffect(() => {
-    if (activeTab === "engineering") setFilter("project");
+    if (activeTab === "computer science") setFilter("project");
     if (activeTab === "business" || activeTab === "activities") setFilter("role");
   }, [activeTab]);
 
   const dataset = useMemo(() => {
-    if (activeTab === "engineering") return ENGINEERING;
+    if (activeTab === "computer science") return COMPUTER_SCIENCE;
     if (activeTab === "business") return BUSINESS;
     if (activeTab === "activities") return ACTIVITIES;
     return AWARDS;
