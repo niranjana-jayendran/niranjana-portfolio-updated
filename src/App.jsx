@@ -735,7 +735,7 @@ const COMMUNITY = [
     details: [
       "STEM education volunteer and curriculum contributor, leading hands-on chemistry and coding sessions for elementary students.",
       "   - Led hands-on fabrication sessions for 50+ elementary students, introducing foundational chemistry and coding principles.",
-·   	"   - Volunteered 50+ hours leading hands-on STEM education sessions for elementary students and contributed to curriculum development to expand access to foundational STEM concepts.",
+     	"   - Volunteered 50+ hours leading hands-on STEM education sessions for elementary students and contributed to curriculum development to expand access to foundational STEM concepts.",
     ],
   },
 ];
