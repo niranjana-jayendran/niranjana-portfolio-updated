@@ -19,6 +19,7 @@ import {
 import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
+import schoolhouse from ".assets/schoolhouse.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -705,7 +706,7 @@ const COMMUNITY = [
     ],
   },
   {
-    image: "/src/assets/community/buddy.jpg",
+    image: schoolhouse,
     title: "Buddy State Program Revamp",
     org: "BPA Florida → National",
     details: [
