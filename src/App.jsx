@@ -462,17 +462,17 @@ const Metric = ({ label, value }) => (
 );
 
 const Work = () => {
-  const [activeTab, setActiveTab] = useState("computer science");
+  const [activeTab, setActiveTab] = useState("Computer Science");
   const [filter, setFilter] = useState("project"); // roles | projects
 
   // Default filter per tab
   useEffect(() => {
-    if (activeTab === "computer science") setFilter("project");
+    if (activeTab === "Computer Science") setFilter("project");
     if (activeTab === "business" || activeTab === "activities") setFilter("role");
   }, [activeTab]);
 
   const dataset = useMemo(() => {
-    if (activeTab === "computer science") return COMPUTER_SCIENCE;
+    if (activeTab === "Computer Science") return COMPUTER_SCIENCE;
     if (activeTab === "business") return BUSINESS;
     if (activeTab === "activities") return ACTIVITIES;
     return AWARDS;
