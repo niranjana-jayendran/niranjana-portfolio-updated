@@ -22,7 +22,7 @@ import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
 import bharatanatyam from "./assets/bharatanatyam.png";
 import fablab from "./assets/fablab.png";
-import resumePdf from "./assets/Resumé.pdf";
+import resumePdf from "./assets/Resume.pdf";
 
 function openResumePdf() {
   window.open(resumePdf, "_blank", "noopener,noreferrer");
