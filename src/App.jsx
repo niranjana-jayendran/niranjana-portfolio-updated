@@ -954,7 +954,6 @@ export default function App() {
         <Work />
         <Community />
         <Story />
-        <Fun />
         <Contact />
       </main>
       <footer className="py-12 text-center text-xs opacity-70">
@@ -963,3 +962,5 @@ export default function App() {
     </div>
   );
 }
+// add <Fun /> in after fixed
+
