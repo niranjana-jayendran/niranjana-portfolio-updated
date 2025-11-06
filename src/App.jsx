@@ -22,12 +22,11 @@ import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
 import bharatanatyam from "./assets/bharatanatyam.png";
 import fablab from "./assets/fablab.png";
+import resumePdf from "./assets/Resumé.pdf";
 
-async function openResumePdf() {
-  const mod = await import("./assets/Resumé.pdf");
-  const url = mod.default || mod;
-  window.open(url, "_blank", "noopener,noreferrer");
-}
+function openResumePdf() {
+  window.open(resume Pdf, "_blank", "noopener,noreferrer");
+};
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -225,7 +224,7 @@ const ABOUT = {
   contacts: {
     email: "niranjanajayendran@gmail.com",
     linkedin: "https://www.linkedin.com/in/niranjana-jayendran-ab5576276/",
-    resume: "#",
+    resume: resumePdf,
   },
 };
 
@@ -396,10 +395,10 @@ const Hero = () => {
                   LinkedIn
                 </Button>
               </a>
-              <a href={ABOUT.contacts.resume}>
+              <a href={ABOUT.contacts.resume} target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost">
                   <FileText className="mr-2 h-4 w-4" />
-                  Resume
+                   Resume
                 </Button>
               </a>
             </div>
