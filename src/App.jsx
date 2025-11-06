@@ -377,14 +377,16 @@ const Hero = () => {
               {ABOUT.name}
             </h1>
             <p className="mt-2 text-lg opacity-80">{ABOUT.tagline}</p>
-            <ul className="mt-6 space-y-2 text-sm">
-              {ABOUT.highlights.map((h, i) => (
-                <li key={i} className="flex gap-2 items-start">
-                  <ChevronRight className="h-4 w-4 mt-0.5" />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
+            {(ABOUT.highlights ?? []).length > 0 && (
+              <ul className="mt-6 space-y-2 text-sm">
+                {(ABOUT.highlights ?? []).map((h, i) => (
+                  <li key={i} className="flex gap-2 items-start">
+                    <ChevronRight className="h-4 w-4 mt-0.5" />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
             <div className="mt-6 flex gap-3">
               <Button onClick={copyEmail}>
                 <Mail className="mr-2 h-4 w-4" />
@@ -723,7 +725,7 @@ const Community = () => (
   </Section>
 );
 
-// =========================
+// ========================= 
 // FUN FACTS — IMAGE CARDS 
 // =========================
 //const FUN_MEDIA = [
@@ -908,11 +910,16 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="md:col-span-2 bg-white/80 backdrop-blur border-black/10">
               <CardContent className="pt-6 text-sm">
-                <p className="opacity-80">{ABOUT.blurb}</p>
+                <div className="space-y-3">
+                  {Array.isArray(ABOUT.blurb)
+                    ? ABOUT.blurb.map((p, i) => <p key={i} className="opacity-80">{p}</p>)
+                    : <p className="opacity-80">{ABOUT.blurb}</p>}
+                </div>
+
               </CardContent>
             </Card>
             <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center">
-              {/* headshot from src/assets/about_headshot.png (keep rounded corners) */}
+              {/* headshot from src/assets/about_headshot.png (keep rounded corners)!! */}
               <img
                 src={headshot}
                 alt="Niranjana headshot"
