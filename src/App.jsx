@@ -19,7 +19,7 @@ import {
 import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
-import schoolhouse from ".assets/schoolhouse.png";
+import schoolhouse from "./assets/schoolhouse.png";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
@@ -707,17 +707,17 @@ const COMMUNITY = [
   },
   {
     image: schoolhouse,
-    title: "Buddy State Program Revamp",
-    org: "BPA Florida → National",
+    title: "International Tutoring",
+    org: "Schoolhouse World",
     details: [
-      "Cross‑state mentorship to raise participation and retention.",
-      "Onboarding scripts and periodic check‑ins.",
-      "Portable playbook to replicate in new regions.",
+      "Taught SAT Reading & Writing to a global cohort and ranked among the top-rated tutors for impact and student feedback.",
+      "   - Taught 130+ students across 23 countries in SAT Reading and Writing throughout 17 sessions.",
+      "   - Ranked in the top 5% of tutors for impact and rating (129 positive ratings, 80 super helpful ratings).",
     ],
   },
   {
-    image: "/src/assets/community/stem.jpg",
-    title: "STEM Mentor (60+ hrs)",
+    image: bharatanatyam,
+    title: "Professional Dancer",
     org: "Faulhaber Fabrication Lab",
     details: [
       "Hands‑on workshops for elementary students; building confidence.",
