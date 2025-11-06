@@ -205,7 +205,7 @@ const Navbar = () => {
   );
 };
 
-// DATA - about + activities
+
 
 const ABOUT = {
   name: "Niranjana Jayendran",
@@ -230,7 +230,7 @@ const COMPUTER_SCIENCE = [
     title: "Predicting Drug Recall Timing from Public Signals",
     org: "AP Research",
     summary:
-      "Conducted independent research analyzing whether sentiment on social media can predict FDA pharmaceutical drug recalls, bridging machine learning and public health.",
+      "I conducted independent research analyzing whether sentiment on social media can predict FDA pharmaceutical drug recalls, bridging machine learning and public health.",
     details: [
       "Built a hybrid natural language processing model combining sentiment anlysis models TextBlob and RoBERTa to quantify tone and subjectivity in 1K+ adverse drug reaction posts.",
       "Cleaned, tokenized, and engineered linguistics features in Python (using padas, NumPy, NLTK) for model input and trained a decision forest regression model to predict recall dates.",
@@ -241,7 +241,7 @@ const COMPUTER_SCIENCE = [
     title: "Market Development and Customer Success Intern",
     org: "IntelliEase AI Solutions",
     summary:
-      "Led IntelliEase's early go-to-market and customer growth: sizing the market, building an SMB pipeline, running customer success/feedback loops, and launching the company's first website to establish its presence.",
+      "I led IntelliEase's early go-to-market and customer growth: sizing the market, building an SMB pipeline, running customer success/feedback loops, and launching the company's first website to establish its presence.",
     details: [
       "Identified $3M revenue potential across Florida and built a data-driven prospect pipeline of 100+ SMBs.",
       "Led customer success meetings, collected client feedback, and integrated insights into AI marketing strategy.",
@@ -254,7 +254,7 @@ const COMPUTER_SCIENCE = [
     title: "Marketing and Design Intern",
     org: "SoulMender AI (Sohum AI)",
     summary:
-      "Led UX research and prototyping for therapist and patient portals, turning demographic and usability insights into Figma wireframes that defined the minimum viable product.",
+      "I led UX research and prototyping for therapist and patient portals, turning demographic and usability insights into Figma wireframes that defined the minimum viable product.",
     details: [
       "Created Figma wireframes and UI prototypes for therapist dashboards and patient portals.",
       "Conducted demographic analysis and usability research to inform the MVP design of the patient portal.",
@@ -264,13 +264,13 @@ const COMPUTER_SCIENCE = [
   },
 ];
 
-// BUSINESS / ACTIVITIES / AWARDS and TABS for filters
+// BUSINESS / AWARDS and TABS for filters
 const BUSINESS = [
   {
     title: "BPA Leadership (National, State, and Chapter)",
     org: "Business Professionals of America",
     summary:
-      "Served as National Secretary of Secondary Division, Florida State President, and Chapter President, impacting over 60,000 students globally.",
+      "I served as National Secretary of Secondary Division, Florida State President, and Chapter President, impacting over 60,000 students globally.",
     details: [
       "National Secretary:",
       "   - Elected to serve as student executive leading BPA's 60,000-member Secondary Division.",
@@ -286,8 +286,9 @@ const BUSINESS = [
     title: "DECA Co-founder & President of Chapter",
     org: "DECA",
     summary:
-      "Co-launched our school's first DECA chapter and managed recruiting, setting officer roles, and training members in preparation for competition.",
-    details: [
+      "I co-launched our school's first DECA chapter and managed recruiting, setting officer roles, and training members in preparation for competition.",
+    details: 
+    [
       "Grew membership to 40 students within the first year after founding.",
       "Led team to 2nd place at districts, 1st place at states, and qualification for the international tournament in year one.",
       "Established officer structure, training resources, and mentorship programs that set the foundation for sustainable growth and future leadership."
@@ -298,7 +299,7 @@ const BUSINESS = [
     title: "President, former Vice President",
     org: "Entrepreneurship Club, Pine View School",
     summary:
-      "Led Pine View's Entrepreneurship Club, expanding the school-wide Shark Tank program, supporting student ventures, and providing funding and workshops on entrepreneurship.",
+      "I led Pine View's Entrepreneurship Club, expanding the school-wide Python Tank program, supporting student ventures, and providing funding and workshops on entrepreneurship.",
     details: 
     [
       "President:",
@@ -309,52 +310,16 @@ const BUSINESS = [
     ],
     type: "role",
   },
-];
-
-const ACTIVITIES = [
   {
-    title: "Breath & Stress‑Management Facilitator",
-    org: "Art of Living Foundation / Schools",
-    summary:
-      "Lead practical breath‑based focus sessions for students and educators; emphasize habit formation and calm.",
-    details: [
-      "1,000+ educators reached (NSBA)",
-      "2‑minute resets built into workshops",
-      "Peer ambassadors embedded in chapters",
-    ],
-    type: "role",
+    title: "Student Certification Series",
+    org: "Business Professionals of America",
+    summary: "I scripted and filmed modules of the 8-week Student Certification Series designed to elevate members' leadership skills and help manage stress.",
+    type: "project",
   },
   {
-    title: "One‑on‑one Tutor (Math, Science, Business)",
-    org: "Independent / School Programs",
-    summary:
-      "Design structured plans, diagnostics, and bite‑size practice loops; focus on clarity and confidence.",
-    details: [
-      "Middle & high school curriculum support",
-      "Measurable weekly goals and habit check‑ins",
-    ],
-    type: "role",
-  },
-  {
-    title: "Bharatanatyam Performer & Choreography",
-    org: "Dance Academy / Community",
-    summary:
-      "Arangetram; performances at cultural events; mentor younger dancers.",
-    details: [
-      "World Culture Festival on National Mall",
-      "Mentored students on technique & stage prep",
-    ],
-    type: "role",
-  },
-  {
-    title: "World Culture Festival — Main Stage Performance",
-    org: "National Mall, Washington D.C.",
-    summary:
-      "Selected performer representing classical arts at a global festival.",
-    details: [
-      "Coordinated rehearsals and logistics",
-      "Performed before 1M+ audience",
-    ],
+    title: "Python Tank Competition",
+    org: "Entrepreneurship Club, Pine View School",
+    summary: "I expanded my school's version of the shark tank pitch competition, inspiring dozens of students to compete and raising over $1,000 to support their ventures.",
     type: "project",
   },
 ];
@@ -378,7 +343,6 @@ const AWARDS = [
 const TABS = [
   { id: "Computer Science", icon: Cpu, label: "Computer Science" },
   { id: "business", icon: Briefcase, label: "Business" },
-  { id: "activities", icon: Users2, label: "Activities" },
   { id: "awards", icon: AwardIcon, label: "Awards" },
 ];
 
@@ -467,14 +431,13 @@ const Work = () => {
 
   // Default filter per tab
   useEffect(() => {
-    if (activeTab === "Computer Science") setFilter("project");
-    if (activeTab === "business" || activeTab === "activities") setFilter("role");
+    if (activeTab === "Computer Science") setFilter("role");
+    if (activeTab === "business") setFilter("role");
   }, [activeTab]);
 
   const dataset = useMemo(() => {
     if (activeTab === "Computer Science") return COMPUTER_SCIENCE;
     if (activeTab === "business") return BUSINESS;
-    if (activeTab === "activities") return ACTIVITIES;
     return AWARDS;
   }, [activeTab]);
 
