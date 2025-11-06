@@ -20,7 +20,7 @@ import headshot from "./assets/about_headshot.png";
 import waving from "./assets/bpa_waving.png";
 import breathing from "./assets/breathing.png";
 import schoolhouse from "./assets/schoolhouse.png";
-import bharatanatyma from "./assets/bharatanatyam.jpg";
+import bharatanatyma from "./assets/dance.jpg";
 
 // Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
