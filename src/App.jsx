@@ -162,7 +162,7 @@ const Navbar = () => {
     { href: "#work", label: "Portfolio" },
     { href: "#community", label: "Community" },
     { href: "#story", label: "Leadership" },
-    { href: "#fun", label: "Fun Facts" },
+//    { href: "#fun", label: "Fun Facts" },
     { href: "#contact", label: "Contact" },
   ];
   return (
@@ -762,14 +762,14 @@ const Community = () => (
 //  { image: "/src/assets/fun/coach.jpg", caption: "Tutoring & peer coaching for clarity." },
 //];
 
-const FunImageCard = ({ image, caption }) => (
-  <div>
-    <div className="rounded-2xl overflow-hidden border border-black/10 bg-white/70 backdrop-blur">
-      <img src={image} alt={caption} className="w-full object-cover" style={{ height: 360 }} />
-    </div>
-    <div className="mt-2 text-sm text-center opacity-80">{caption}</div>
-  </div>
-);
+//const FunImageCard = ({ image, caption }) => (
+//  <div>
+//    <div className="rounded-2xl overflow-hidden border border-black/10 bg-white/70 backdrop-blur">
+//      <img src={image} alt={caption} className="w-full object-cover" style={{ height: 360 }} />
+//    </div>
+//    <div className="mt-2 text-sm text-center opacity-80">{caption}</div>
+//  </div>
+//);
 
 const LEADERSHIP = [
   {
@@ -914,9 +914,6 @@ const Contact = () => (
               <Users2 className="h-4 w-4" /> <a className="underline" href="#community">Community impact</a>
             </li>
             <li className="flex items-center gap-2">
-              <Star className="h-4 w-4" /> <a className="underline" href="#fun">Fun facts</a>
-            </li>
-            <li className="flex items-center gap-2">
               <Users2 className="h-4 w-4" /> <a className="underline" href="#story">Leadership story</a>
             </li>
           </ul>
@@ -925,6 +922,11 @@ const Contact = () => (
     </div>
   </Section>
 );
+
+// add this in the above section when ready:
+//<li className="flex items-center gap-2">
+//              <Star className="h-4 w-4" /> <a className="underline" href="#fun">Fun facts</a>
+//            </li>
 
 export default function App() {
   return (
