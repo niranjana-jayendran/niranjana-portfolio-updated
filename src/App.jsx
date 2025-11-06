@@ -691,9 +691,9 @@ const COMMUNITY = [
     title: "Youth Ambassador",
     org: "Art of Living / SKY Schools",
     details: [
-      "Breath-work instructor and keynote speaker; lead school stress-management programs."
+      "Breath-work instructor and keynote speaker; lead school stress-management programs.",
       "   - Delivered a keynote to 1,000+ educators on evidence-based stress management breath techniques in schools for the National School Board Association (NSBA) annual conference.",
-      "   - Facilitated and organized local Art of Living programs for students and staff, teaching practical breathing and mindfulness techniques."
+      "   - Facilitated and organized local Art of Living programs for students and staff, teaching practical breathing and mindfulness techniques.",
     ],
   },
   {
