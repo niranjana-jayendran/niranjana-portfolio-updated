@@ -217,7 +217,7 @@ const ABOUT = {
     "Business - I serve as BPA's National Secretary, founded our school's DECA chapter, and lead the Entrepreneurship Club, focusing on leadership training and fostering students' ideas.",
     "Applied Computer Science and Research - I've worked on market sizing, customer meetings, and model development at IntelliEase AI; prototyped model and designed website at SoulMender; and trained a sentiment model estimating drug-recall timing for AP Research.",
     "Stress-Management Teaching - Outside of work, I'm passionate about sharing the techniques that have helped me increase my capacity and decrease my stress: breathing! I've delivered keynote speeches to educators on the importance of such techniques in schools and have facilitated workshops for students locally.",
-    "Arts and Community - My heritage and community is incredibly important to me: I am a proud Bharatanatyam (South Indian Clasical Dance) Soloist, performing on stages from the National Mall in DC to my backyard for my family!",
+    "Arts and Community - My heritage and community is incredibly important to me: I am a proud Bharatanatyam (South Indian Classical Dance) Soloist, performing on stages from the National Mall in DC to my backyard for my family!",
   ],
 //  highlights: [
 //    "",
@@ -269,7 +269,10 @@ const COMPUTER_SCIENCE = [
     title: "Website Design",
     org: "SoulMender AI (Sohum AI)",
     summary: "Utilizing JavaScript, React, HTML, and CSS, I translated SoulMender's Figma wireframes and customer survey insights into a polished, marketing site catered for potential clients (separate dashboard for therapists to join and for clients to sign up) and investors",
-    type: "project"
+    details: [
+      "Here is the website I designed: https://soulmender.ai/"
+    ],
+    type: "project",
   }
 ];
 
