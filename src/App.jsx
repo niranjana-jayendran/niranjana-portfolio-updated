@@ -751,30 +751,21 @@ const Community = () => (
 
 const LEADERSHIP = [
   {
-    phase: "National BPA — Secretary",
-    summary: "Scaled national student programs with a trust‑building mindset.",
+    phase: "Competitor",
+    summary: "My journey as a competitor began with Extemporaneous Speaking in Speech and Debate. The event challenged me to take issues I cared about and articulate them with clarity, even when the clock was ticking. In those moments, I learned to think quickly, to remain composed in the face of uncertainty, and to trust that my voice could carry meaning in a crowded room. By ninth grade, I was eager to continue growing in an environment that aligned more closely with my interest in business, so I joined BPA and the Entrepreneurship Club. These organizations introduced me to a new kind of challenge, one that demanded both analytical thinking and adaptability, and kept me searching for ways to improve.",
     bullets: [
-      "Serve ~60,000 students; focus on access and practical adoption.",
-      "Refreshed Student Certification Series; co‑led National Leadership Summit workshops.",
-      "Launched cross‑state Buddy System to strengthen participation and retention.",
     ],
   },
   {
-    phase: "Florida BPA — State President",
-    summary: "Operational growth through clarity and coaching.",
+    phase: "Student Advocate",
+    summary: "Co-founding DECA at my school and welcoming over thirty students into their first business competitions showed me how much people can grow when they are supported by a community, and seeing our chapter reach ICDC in our very first year was a testament to what we could accomplish together. In BPA, I campaigned for Florida State President and spent the year collaborating with chapters across the state, ultimately helping our membership grow by 54%. That number mattered to me because it meant more students were discovering a place where they could challenge themselves and find their voice. Now, as National Secretary, I have the privilege of representing 60,000 members worldwide, developing programs that genuinely serve students, and staying connected to the people who make BPA meaningful!",
     bullets: [
-      "+54% membership growth YoY; planned 500‑attendee SLC with student‑led teams.",
-      "Built advisor coalition; instituted predictable cadences and role guides.",
-      "Raised chapter engagement via templates, agendas, and officer coaching.",
     ],
   },
   {
-    phase: "DECA — Founder & President",
-    summary: "From zero to ICDC in year one.",
+    phase: "Interdisciplinary Exploration",
+    summary: "These experiences have not handed me a single, clear answer about my future, but they have helped me refine my interests and ambitions. I’m drawn to business because it offers a framework for turning ideas into tangible projects, and I am fascinated by technology because it constantly redefines what is possible. To explore where these fields intersect, I have sought out internships and side projects, from developing artificial intelligence-influenced technology for mental health to creating tools for small businesses. I am still experimenting and learning from mentors and peers around me. What excites me most is the prospect of building a path that weaves together strategy, innovation, and the kind of community that first inspired me to compete!",
     bullets: [
-      "Grew chapter to 40 members; built training pipeline and event selection.",
-      "Travel & Tourism TDM: Districts 2nd → States 1st → ICDC qualification.",
-      "Peer‑led prep on research, presentations, and role‑plays.",
     ],
   },
 ];
