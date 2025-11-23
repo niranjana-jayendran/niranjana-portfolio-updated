@@ -931,7 +931,6 @@ export default function App() {
         <Contact />
       </main>
       <footer className="py-12 text-center text-xs opacity-70">
-        Built as a single‑file React app. Print‑friendly and mobile‑first.
       </footer>
     </div>
   );
