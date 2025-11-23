@@ -409,28 +409,29 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          <div>
-            <Card className="shadow-xl bg-white/80 backdrop-blur border-black/10">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Cpu className="h-5 w-5" /> Live Snapshot
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                  <Metric label="Students served (BPA)" value="60k+" />
-                  <Metric label="State growth (YoY)" value="+54%" />
-                  <Metric label="Educators reached" value="1,000+" />
-                  <Metric label="Awards (tracked)" value={`${awardsCount}+`} />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
   );
 };
+// live snapshot:
+//         <div>
+//            <Card className="shadow-xl bg-white/80 backdrop-blur border-black/10">
+//              <CardHeader>
+//                <CardTitle className="flex items-center gap-2">
+//                  <Cpu className="h-5 w-5" /> Live Snapshot
+//                </CardTitle>
+//              </CardHeader>
+//              <CardContent>
+//                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+//                  <Metric label="Students served (BPA)" value="60k+" />
+//                  <Metric label="State growth (YoY)" value="+54%" />
+//                  <Metric label="Educators reached" value="1,000+" />
+//                  <Metric label="Awards (tracked)" value={`${awardsCount}+`} />
+//                </div>
+//              </CardContent>
+//            </Card>
+//          </div>
 
 const Metric = ({ label, value }) => (
   <div className="rounded-2xl border border-black/10 p-4 bg-white/70 backdrop-blur">
