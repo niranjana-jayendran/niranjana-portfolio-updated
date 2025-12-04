@@ -731,7 +731,7 @@ const Community = () => (
 const LEADERSHIP_CHAPTERS = [
   {
     id: "competitor",
-    chapter: "Phase 1",
+    chapter: "",
     title: "Competitor",
     subtitle: "Finding my voice through Speech & Debate and early BPA",
     blurb:
@@ -742,7 +742,7 @@ const LEADERSHIP_CHAPTERS = [
   },
   {
     id: "advocate",
-    chapter: "Phase 2",
+    chapter: "",
     title: "Student Advocate",
     subtitle: "Leading BPA, DECA, and entrepreneurship communities",
     blurb:
@@ -753,7 +753,7 @@ const LEADERSHIP_CHAPTERS = [
   },
   {
     id: "interdisciplinary",
-    chapter: "Phase 3",
+    chapter: "",
     title: "Interdisciplinary Exploration",
     subtitle: "Connecting business, technology, and wellbeing",
     blurb:
@@ -838,7 +838,6 @@ const LeadershipChapters = () => {
               <span className="opacity-80">{active.statLabel}</span>
             </div>
             <p className="text-[11px] opacity-60">
-              Each phase builds on the previous one and links competitor, advocate, and explorer.
             </p>
           </div>
         </div>
