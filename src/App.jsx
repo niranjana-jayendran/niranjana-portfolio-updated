@@ -755,7 +755,7 @@ const LEADERSHIP_CHAPTERS = [
     id: "interdisciplinary",
     chapter: "",
     title: "Interdisciplinary Exploration",
-    subtitle: "Connecting business, technology, and wellbeing",
+    subtitle: "Connecting business and technology",
     blurb:
       "These experiences have not handed me a single, clear answer about my future, but they have helped me refine my interests and ambitions. I am drawn to business because it offers a framework for turning ideas into tangible projects, and I am fascinated by technology because it constantly redefines what is possible. To explore where these fields intersect, I have sought out internships and side projects, from developing AI-informed tools for mental health to creating automations for small businesses. I am still experimenting and learning from mentors and peers around me. What excites me most is the prospect of building a path that weaves together strategy, innovation, and the kind of community that first inspired me to compete.",
     statLabel: "internships and major side projects",
