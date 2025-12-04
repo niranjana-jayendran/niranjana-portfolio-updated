@@ -728,6 +728,131 @@ const Community = () => (
     </div>
   </Section>
 );
+const LEADERSHIP_CHAPTERS = [
+  {
+    id: "competitor",
+    chapter: "Phase 1",
+    title: "Competitor",
+    subtitle: "Finding my voice through Speech & Debate and early BPA",
+    blurb:
+      "My journey as a competitor began with Extemporaneous Speaking in Speech and Debate. The event challenged me to take issues I cared about and articulate them with clarity, even when the clock was ticking. In those moments, I learned to think quickly, to remain composed in the face of uncertainty, and to trust that my voice could carry meaning in a crowded room. By ninth grade, I was eager to continue growing in an environment that aligned more closely with my interest in business, so I joined BPA and the Entrepreneurship Club. These organizations introduced me to a new kind of challenge, one that demanded both analytical thinking and adaptability, and kept me searching for ways to improve.",
+    statLabel: "years competing across events",
+    statValue: "4+",
+    accent: "from-sky-200/80 to-indigo-200/80",
+  },
+  {
+    id: "advocate",
+    chapter: "Phase 2",
+    title: "Student Advocate",
+    subtitle: "Leading BPA, DECA, and entrepreneurship communities",
+    blurb:
+      "Co-founding DECA at my school and welcoming over thirty students into their first business competitions showed me how much people can grow when they are supported by a community, and seeing our chapter reach ICDC in our very first year was a testament to what we could accomplish together. In BPA, I campaigned for Florida State President and spent the year collaborating with chapters across the state, ultimately helping our membership grow by 54%. That number mattered to me because it meant more students were discovering a place where they could challenge themselves and find their voice. Now, as National Secretary, I have the privilege of representing 60,000 members worldwide, developing programs that genuinely serve students, and staying connected to the people who make BPA meaningful.",
+    statLabel: "members represented nationally",
+    statValue: "60k+",
+    accent: "from-amber-200/80 to-orange-200/80",
+  },
+  {
+    id: "interdisciplinary",
+    chapter: "Phase 3",
+    title: "Interdisciplinary Exploration",
+    subtitle: "Connecting business, technology, and wellbeing",
+    blurb:
+      "These experiences have not handed me a single, clear answer about my future, but they have helped me refine my interests and ambitions. I am drawn to business because it offers a framework for turning ideas into tangible projects, and I am fascinated by technology because it constantly redefines what is possible. To explore where these fields intersect, I have sought out internships and side projects, from developing AI-informed tools for mental health to creating automations for small businesses. I am still experimenting and learning from mentors and peers around me. What excites me most is the prospect of building a path that weaves together strategy, innovation, and the kind of community that first inspired me to compete.",
+    statLabel: "internships and major side projects",
+    statValue: "3+",
+    accent: "from-emerald-200/80 to-teal-200/80",
+  },
+];
+
+const LeadershipChapters = () => {
+  const [activeId, setActiveId] = useState("competitor");
+  const active =
+    LEADERSHIP_CHAPTERS.find((c) => c.id === activeId) ?? LEADERSHIP_CHAPTERS[0];
+
+  return (
+    <div className="grid md:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] gap-6 items-stretch">
+      <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-visible pb-1 md:pb-0 -mx-4 md:mx-0 px-4 md:px-0">
+        {LEADERSHIP_CHAPTERS.map((chapter) => {
+          const isActive = chapter.id === activeId;
+          return (
+            <button
+              key={chapter.id}
+              type="button"
+              onClick={() => setActiveId(chapter.id)}
+              className={classNames(
+                "relative group text-left shrink-0 md:shrink border rounded-2xl transition-all duration-200",
+                "bg-white/70 backdrop-blur",
+                isActive
+                  ? "border-black/80 shadow-[0_8px_25px_rgba(0,0,0,0.12)]"
+                  : "border-black/10 hover:border-black/40 hover:shadow-sm",
+                "px-3 py-3 md:px-4 md:py-4 min-w-[150px] md:min-w-0"
+              )}
+            >
+              <div
+                className={classNames(
+                  "absolute inset-y-2 left-1 w-1 rounded-full bg-gradient-to-b",
+                  chapter.accent
+                )}
+              />
+              <div className="pl-3">
+                <div className="text-[11px] uppercase tracking-[0.16em] opacity-70">
+                  {chapter.chapter}
+                </div>
+                <div className="text-sm font-semibold leading-snug mt-0.5">
+                  {chapter.title}
+                </div>
+                <div className="text-[11px] opacity-70 mt-1 line-clamp-2">
+                  {chapter.subtitle}
+                </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <motion.div
+        key={active.id}
+        initial={{ opacity: 0, x: 12 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.22, ease: "easeOut" }}
+        className="relative rounded-2xl border border-black/10 bg-white/80 backdrop-blur p-5 md:p-6"
+      >
+        <div
+          className={classNames(
+            "pointer-events-none absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-70 bg-gradient-to-br",
+            active.accent
+          )}
+        />
+
+        <div className="relative z-10 space-y-3 text-sm">
+          <div className="text-[11px] uppercase tracking-[0.18em] opacity-60">
+            {active.chapter}
+          </div>
+          <h3 className="text-base md:text-lg font-semibold">{active.title}</h3>
+          <p className="text-xs opacity-70">{active.subtitle}</p>
+          <p className="opacity-80 leading-relaxed">{active.blurb}</p>
+
+          <div className="pt-3 border-t border-dashed border-black/10 flex flex-wrap items-center gap-3">
+            <div className="inline-flex items-baseline gap-1.5 px-3 py-1.5 rounded-full bg-black text-white text-[11px]">
+              <span className="font-semibold">{active.statValue}</span>
+              <span className="opacity-80">{active.statLabel}</span>
+            </div>
+            <p className="text-[11px] opacity-60">
+              Each phase builds on the previous one and links competitor, advocate, and explorer.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+const Story = () => (
+  <Section id="story" title="Leadership Story" icon={Users2}>
+    <LeadershipChapters />
+  </Section>
+);
+
 
 // ========================= 
 // FUN FACTS — IMAGE CARDS 
@@ -750,89 +875,6 @@ const Community = () => (
 //  </div>
 //);
 
-const LEADERSHIP = [
-  {
-    phase: "Competitor",
-    summary: "",
-    bullets: [
-      "My journey as a competitor began with Extemporaneous Speaking in Speech and Debate. The event challenged me to take issues I cared about and articulate them with clarity, even when the clock was ticking. In those moments, I learned to think quickly, to remain composed in the face of uncertainty, and to trust that my voice could carry meaning in a crowded room. By ninth grade, I was eager to continue growing in an environment that aligned more closely with my interest in business, so I joined BPA and the Entrepreneurship Club. These organizations introduced me to a new kind of challenge, one that demanded both analytical thinking and adaptability, and kept me searching for ways to improve."
-    ],
-  },
-  {
-    phase: "Student Advocate",
-    summary: "",
-    bullets: [
-      "Co-founding DECA at my school and welcoming over thirty students into their first business competitions showed me how much people can grow when they are supported by a community, and seeing our chapter reach ICDC in our very first year was a testament to what we could accomplish together. In BPA, I campaigned for Florida State President and spent the year collaborating with chapters across the state, ultimately helping our membership grow by 54%. That number mattered to me because it meant more students were discovering a place where they could challenge themselves and find their voice. Now, as National Secretary, I have the privilege of representing 60,000 members worldwide, developing programs that genuinely serve students, and staying connected to the people who make BPA meaningful!"
-    ],
-  },
-  {
-    phase: "Interdisciplinary Exploration",
-    summary: "",
-    bullets: [
-      "These experiences have not handed me a single, clear answer about my future, but they have helped me refine my interests and ambitions. I’m drawn to business because it offers a framework for turning ideas into tangible projects, and I am fascinated by technology because it constantly redefines what is possible. To explore where these fields intersect, I have sought out internships and side projects, from developing artificial intelligence-influenced technology for mental health to creating tools for small businesses. I am still experimenting and learning from mentors and peers around me. What excites me most is the prospect of building a path that weaves together strategy, innovation, and the kind of community that first inspired me to compete!"
-    ],
-  },
-];
-
-const Story = () => {
-  const [active, setActive] = useState(0);
-  const current = LEADERSHIP[active];
-  return (
-    <Section id="story" title="Leadership Story" icon={Users2}>
-      <div className="grid md:grid-cols-3 gap-6">
-        <Timeline
-          items={LEADERSHIP.map((l) => ({ t: l.phase, d: l.summary }))}
-          active={active}
-          onSelect={setActive}
-        />
-        <Card className="md:col-span-2 bg-white/80 backdrop-blur border-black/10">
-          <CardHeader>
-            <CardTitle className="text-base flex items-center gap-2">
-              <GraduationCap className="h-4 w-4" />
-              Highlights
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="rounded-2xl border border-black/10 p-4 bg-white/70 backdrop-blur text-sm">
-              <div className="font-medium mb-1">{current.phase}</div>
-              <div className="opacity-80 mb-2">{current.summary}</div>
-              <ul className="space-y-1">
-                {current.bullets.map((b, bi) => (
-                  <li key={bi} className="flex items-start gap-2">
-                    <ChevronRight className="h-4 w-4 mt-0.5 opacity-60" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </Section>
-  );
-};
-
-const Timeline = ({ items, active = 0, onSelect }) => (
-  <ol className="relative pl-10">
-    <div className="absolute top-0 bottom-0 w-px bg-black/15" style={{ left: "0" }} />
-    {items.map((it, i) => (
-      <li key={i} className="relative mb-6">
-        <button
-          type="button"
-          onClick={() => onSelect?.(i)}
-          aria-pressed={active === i}
-          aria-label={`Show ${it.t} highlights`}
-          className={classNames(
-            "absolute -translate-x-1/2 top-1 h-5 w-5 rounded-full border-2 transition hover:ring-2 hover:ring-black/20 focus:outline-none focus:ring-2 focus:ring-black/30",
-            active === i ? "bg-black border-black" : "bg-white border-black"
-          )} style={{ left: "-2.5rem" }}
-        />
-        <div className="text-sm font-medium">{it.t}</div>
-        <div className="text-sm opacity-80">{it.d}</div>
-      </li>
-    ))}
-  </ol>
-);
 
 //const Fun = () => (
 //  <Section id="fun" title="Fun Facts" icon={Star}>
