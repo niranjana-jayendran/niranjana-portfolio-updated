@@ -319,7 +319,7 @@ const AboutBookshelf = () => {
               Core profile
             </span>
             <span className="text-[0.6rem] text-sky-300/80">
-              Click a node to route details
+              Click a button to learn more about me in each area!
             </span>
           </div>
 
