@@ -472,7 +472,6 @@ const AboutBookshelf = () => {
               <span className="opacity-80">{active.statLabel}</span>
             </div>
             <p className="text-[11px] opacity-60">
-              This node is one of four pathways out of my core: business, research, breath, and the arts.
             </p>
           </div>
         </div>
