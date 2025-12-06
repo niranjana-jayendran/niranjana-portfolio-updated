@@ -627,11 +627,13 @@ const Hero = () => {
       <Background />
       <div className="max-w-6xl mx-auto px-4 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* LEFT: text */}
           <div>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
               {ABOUT.name}
             </h1>
             <p className="mt-2 text-lg opacity-80">{ABOUT.tagline}</p>
+
             {(ABOUT.highlights ?? []).length > 0 && (
               <ul className="mt-6 space-y-2 text-sm">
                 {(ABOUT.highlights ?? []).map((h, i) => (
@@ -642,6 +644,7 @@ const Hero = () => {
                 ))}
               </ul>
             )}
+
             <div className="mt-6 flex gap-3">
               <Button onClick={copyEmail}>
                 <Mail className="mr-2 h-4 w-4" />
@@ -653,19 +656,33 @@ const Hero = () => {
                   LinkedIn
                 </Button>
               </a>
-              <a href={ABOUT.contacts.resume} target="_blank" rel="noopener noreferrer">
+              <a
+                href={ABOUT.contacts.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="ghost">
                   <FileText className="mr-2 h-4 w-4" />
-                   Resume
+                  Resume
                 </Button>
               </a>
             </div>
           </div>
+
+          {/* RIGHT: headshot card */}
+          <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center">
+            <img
+              src={headshot}
+              alt="Niranjana headshot"
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          </Card>
         </div>
       </div>
     </section>
   );
 };
+
 // live snapshot:
 //         <div>
 //            <Card className="shadow-xl bg-white/80 backdrop-blur border-black/10">
