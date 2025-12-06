@@ -229,6 +229,258 @@ const ABOUT = {
   },
 };
 
+const ABOUT_CHAPTERS = [
+  {
+    id: "business",
+    chapter: "Node 01",
+    title: "Business & Leadership",
+    subtitle: "BPA, DECA, and entrepreneurship ecosystems",
+    blurb:
+      "I serve as BPA's National Secretary, founded my school's DECA chapter, and lead the Entrepreneurship Club. Across these spaces, I focus on building programs and support systems that help students move from ideas to action.",
+    statLabel: "students impacted",
+    statValue: "60k+",
+    accent: "from-sky-200/80 to-indigo-200/80",
+  },
+  {
+    id: "cs",
+    chapter: "Node 02",
+    title: "Applied CS & Research",
+    subtitle: "AI tools for small businesses and public health",
+    blurb:
+      "From IntelliEase AI to SoulMender and my AP Research project on predicting drug recalls, I like working where technical models meet real constraints, whether that involves workflow, ethics, or adoption.",
+    statLabel: "major projects",
+    statValue: "3+",
+    accent: "from-cyan-200/80 to-teal-200/80",
+  },
+  {
+    id: "breath",
+    chapter: "Node 03",
+    title: "Breath & Stress Management",
+    subtitle: "Teaching SKY breathwork to students and educators",
+    blurb:
+      "As a youth ambassador for Art of Living/SKY Schools, I speak with educators and students about practical breathing techniques that reduce stress and increase capacity, from keynotes to classroom workshops.",
+    statLabel: "people reached",
+    statValue: "1k+",
+    accent: "from-emerald-200/80 to-lime-200/80",
+  },
+  {
+    id: "arts",
+    chapter: "Node 04",
+    title: "Arts & Community",
+    subtitle: "Bharatanatyam, music, and cultural spaces",
+    blurb:
+      "Classical dance and music keep me grounded. My Arangetram, World Culture Festival performance, and community shows highlight how discipline and joy can coexist on the same stage.",
+    statLabel: "years training",
+    statValue: "12",
+    accent: "from-rose-200/80 to-purple-200/80",
+  },
+];
+
+const AboutBookshelf = () => {
+  const [activeId, setActiveId] = useState("business");
+  const active =
+    ABOUT_CHAPTERS.find((c) => c.id === activeId) ?? ABOUT_CHAPTERS[0];
+
+  const CHIP_CONNECTIONS = {
+    business: {
+      nodeClass: "top-3 left-1/2 -translate-x-1/2",
+      lineClass: "top-16 left-1/2 -translate-x-1/2 h-10 w-[3px]",
+    },
+    cs: {
+      nodeClass: "top-1/2 right-3 -translate-y-1/2",
+      lineClass: "top-1/2 right-16 -translate-y-1/2 w-10 h-[3px]",
+    },
+    breath: {
+      nodeClass: "bottom-3 left-1/2 -translate-x-1/2",
+      lineClass: "bottom-16 left-1/2 -translate-x-1/2 h-10 w-[3px]",
+    },
+    arts: {
+      nodeClass: "top-1/2 left-3 -translate-y-1/2",
+      lineClass: "top-1/2 left-16 -translate-y-1/2 w-10 h-[3px]",
+    },
+  };
+
+  return (
+    <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-6 items-stretch">
+      {/* LEFT: chip + PCB */}
+      <div className="relative rounded-2xl bg-slate-950/95 border border-sky-400/40 overflow-hidden text-[11px] text-sky-50">
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 0 0, rgba(56,189,248,0.45), transparent 55%)," +
+              "radial-gradient(circle at 100% 100%, rgba(244,114,182,0.35), transparent 55%)," +
+              "linear-gradient(90deg, rgba(15,23,42,1), rgba(15,23,42,0.95))",
+          }}
+        />
+        <div className="relative z-10 h-80 md:h-72 p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="uppercase tracking-[0.18em] text-[0.6rem] text-sky-200/80">
+              Core profile
+            </span>
+            <span className="text-[0.6rem] text-sky-300/80">
+              Click a node to route details
+            </span>
+          </div>
+
+          <div className="relative h-full">
+            {/* PCB board */}
+            <div className="absolute inset-3 rounded-2xl bg-slate-950 border border-sky-500/60 overflow-hidden">
+              <div
+                className="absolute inset-[-40%] opacity-45"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(60deg, rgba(56,189,248,0.22) 0, rgba(56,189,248,0.22) 1px, transparent 1px, transparent 6px)," +
+                    "repeating-linear-gradient(-60deg, rgba(129,230,217,0.18) 0, rgba(129,230,217,0.18) 1px, transparent 1px, transparent 6px)",
+                }}
+              />
+
+              {/* four main glowing highways */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-3 bottom-1/2 pointer-events-none">
+                <div className="absolute inset-y-6 w-[3px] mx-auto bg-gradient-to-b from-cyan-300 via-cyan-400 to-transparent blur-[0.5px]" />
+              </div>
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 left-1/2 pointer-events-none">
+                <div className="absolute left-10 right-6 h-[3px] top-1/2 -translate-y-1/2 bg-gradient-to-r from-cyan-300 via-cyan-400 to-transparent blur-[0.5px]" />
+              </div>
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-3 top-1/2 pointer-events-none">
+                <div className="absolute inset-y-6 w-[3px] mx-auto bg-gradient-to-t from-cyan-300 via-cyan-400 to-transparent blur-[0.5px]" />
+              </div>
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 right-1/2 pointer-events-none">
+                <div className="absolute right-10 left-6 h-[3px] top-1/2 -translate-y-1/2 bg-gradient-to-l from-cyan-300 via-cyan-400 to-transparent blur-[0.5px]" />
+              </div>
+            </div>
+
+            {/* central chip */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="relative w-32 h-32 md:w-40 md:h-40">
+                <div className="absolute inset-0 rounded-[18px] bg-black/70 blur-md translate-x-1 translate-y-1 opacity-70" />
+                <div className="relative w-full h-full rounded-[18px] bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-700 shadow-[0_18px_35px_rgba(0,0,0,0.7)] overflow-hidden">
+                  <div className="absolute inset-[3px] rounded-[14px] bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-500/80" />
+                  <div className="absolute inset-[18%] rounded-[10px] bg-slate-950" />
+                  <div
+                    className="absolute inset-[22%] rounded-[10px] opacity-70 mix-blend-screen"
+                    style={{
+                      backgroundImage:
+                        "repeating-linear-gradient(90deg, rgba(56,189,248,0.26) 0, rgba(56,189,248,0.26) 1px, transparent 1px, transparent 4px)," +
+                        "repeating-linear-gradient(0deg, rgba(56,189,248,0.2) 0, rgba(56,189,248,0.2) 1px, transparent 1px, transparent 4px)",
+                    }}
+                  />
+                  <div className="absolute inset-[30%] rounded-[6px] bg-cyan-400/40 blur-[4px]" />
+                  <div className="absolute inset-[30%] rounded-[6px] border border-cyan-300/80" />
+                  {Array.from({ length: 10 }).map((_, i) => {
+                    const offset = 8 + i * 8;
+                    const pos = `${offset}%`;
+                    return (
+                      <React.Fragment key={i}>
+                        <div
+                          className="absolute h-1.5 w-[7px] bg-amber-300 rounded-sm shadow-[0_0_6px_rgba(251,191,36,0.7)]"
+                          style={{ top: -4, left: pos }}
+                        />
+                        <div
+                          className="absolute h-1.5 w-[7px] bg-amber-300 rounded-sm shadow-[0_0_6px_rgba(251,191,36,0.7)]"
+                          style={{ bottom: -4, left: pos }}
+                        />
+                        <div
+                          className="absolute w-1.5 h-[7px] bg-amber-300 rounded-sm shadow-[0_0_6px_rgba(251,191,36,0.7)]"
+                          style={{ left: -4, top: pos }}
+                        />
+                        <div
+                          className="absolute w-1.5 h-[7px] bg-amber-300 rounded-sm shadow-[0_0_6px_rgba(251,191,36,0.7)]"
+                          style={{ right: -4, top: pos }}
+                        />
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* short glowing connectors to each node */}
+            {ABOUT_CHAPTERS.map((chapter) => {
+              const cfg = CHIP_CONNECTIONS[chapter.id];
+              if (!cfg) return null;
+              return (
+                <div
+                  key={chapter.id + "-wire"}
+                  className={classNames(
+                    "absolute bg-gradient-to-b from-cyan-300 to-cyan-500 rounded-full shadow-[0_0_14px_rgba(56,189,248,0.8)]",
+                    cfg.lineClass
+                  )}
+                />
+              );
+            })}
+
+            {/* clickable nodes around the chip */}
+            {ABOUT_CHAPTERS.map((chapter) => {
+              const cfg = CHIP_CONNECTIONS[chapter.id];
+              if (!cfg) return null;
+              const isActive = chapter.id === activeId;
+              return (
+                <motion.button
+                  key={chapter.id + "-node"}
+                  type="button"
+                  onClick={() => setActiveId(chapter.id)}
+                  whileHover={{ scale: 1.03, y: -1 }}
+                  className={classNames(
+                    "absolute flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[0.65rem] backdrop-blur-sm transition",
+                    "border-cyan-300/60 bg-slate-900/85",
+                    isActive
+                      ? "shadow-[0_0_20px_rgba(56,189,248,0.9)] border-cyan-200"
+                      : "opacity-80 hover:opacity-100",
+                    cfg.nodeClass
+                  )}
+                >
+                  <span
+                    className={classNames(
+                      "h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(56,189,248,0.9)]",
+                      isActive && "scale-110"
+                    )}
+                  />
+                  <span className="truncate max-w-[7.5rem]">{chapter.title}</span>
+                </motion.button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT: about text panel */}
+      <motion.div
+        key={active.id}
+        initial={{ opacity: 0, x: 12 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.22, ease: "easeOut" }}
+        className="relative rounded-2xl border border-black/10 bg-white/80 backdrop-blur p-5 md:p-6"
+      >
+        <div
+          className={classNames(
+            "pointer-events-none absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-70 bg-gradient-to-br",
+            active.accent
+          )}
+        />
+        <div className="relative z-10 space-y-3 text-sm">
+          <div className="text-[11px] uppercase tracking-[0.18em] opacity-60">
+            {active.chapter}
+          </div>
+          <h3 className="text-base md:text-lg font-semibold">{active.title}</h3>
+          <p className="text-xs opacity-70">{active.subtitle}</p>
+          <p className="opacity-85 leading-relaxed">{active.blurb}</p>
+
+          <div className="pt-3 border-t border-dashed border-black/10 flex flex-wrap items-center gap-3">
+            <div className="inline-flex items-baseline gap-1.5 px-3 py-1.5 rounded-full bg-black text-white text-[11px]">
+              <span className="font-semibold">{active.statValue}</span>
+              <span className="opacity-80">{active.statLabel}</span>
+            </div>
+            <p className="text-[11px] opacity-60">
+              This node is one of four pathways out of my core: business, research, breath, and the arts.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const COMPUTER_SCIENCE = [
   {
     title: "Predicting Drug Recall Timing from Public Signals",
@@ -946,19 +1198,11 @@ export default function App() {
       <Hero />
       <main>
         <Section id="about" title="About" icon={GraduationCap}>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="md:col-span-2 bg-white/80 backdrop-blur border-black/10">
-              <CardContent className="pt-6 text-sm">
-                <div className="space-y-3">
-                  {Array.isArray(ABOUT.blurb)
-                    ? ABOUT.blurb.map((p, i) => <p key={i} className="opacity-80">{p}</p>)
-                    : <p className="opacity-80">{ABOUT.blurb}</p>}
-                </div>
-
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+            <div className="md:col-span-2">
+              <AboutBookshelf />
+            </div>
             <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center">
-              {/* headshot from src/assets/about_headshot.png (keep rounded corners)!! */}
               <img
                 src={headshot}
                 alt="Niranjana headshot"
