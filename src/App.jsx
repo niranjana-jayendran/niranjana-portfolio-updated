@@ -670,18 +670,21 @@ const Hero = () => {
           </div>
 
           {/* RIGHT: headshot card */}
-          <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center">
-            <img
-              src={headshot}
-              alt="Niranjana headshot"
-              className="w-full h-full object-cover rounded-2xl"
-            />
+          <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center md:max-w-sm md:ml-auto">
+            <div className="w-full" style={{ aspectRatio: "4 / 3" }}>
+              <img
+                src={headshot}
+                alt="Niranjana headshot"
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
           </Card>
         </div>
       </div>
     </section>
   );
 };
+
 
 // live snapshot:
 //         <div>
@@ -1215,18 +1218,7 @@ export default function App() {
       <Hero />
       <main>
         <Section id="about" title="About" icon={GraduationCap}>
-          <div className="grid md:grid-cols-3 gap-6 items-stretch">
-            <div className="md:col-span-2">
-              <AboutBookshelf />
-            </div>
-            <Card className="bg-white/80 backdrop-blur border-black/10 overflow-hidden flex items-center justify-center">
-              <img
-                src={headshot}
-                alt="Niranjana headshot"
-                className="w-full h-full object-cover rounded-2xl"
-              />
-            </Card>
-          </div>
+          <AboutBookshelf />
         </Section>
         <Work />
         <Community />
