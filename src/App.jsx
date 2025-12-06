@@ -232,33 +232,33 @@ const ABOUT = {
 const ABOUT_CHAPTERS = [
   {
     id: "business",
-    chapter: "Node 01",
+    chapter: "",
     title: "Business & Leadership",
-    subtitle: "BPA, DECA, and entrepreneurship ecosystems",
+    subtitle: "",
     blurb:
-      "I serve as BPA's National Secretary, founded my school's DECA chapter, and lead the Entrepreneurship Club. Across these spaces, I focus on building programs and support systems that help students move from ideas to action.",
+      "I serve as BPA's National Secretary, founded our school's DECA chapter, and lead the Entrepreneurship Club, focusing on leadership training and fostering students' ideas.",
     statLabel: "students impacted",
     statValue: "60k+",
     accent: "from-sky-200/80 to-indigo-200/80",
   },
   {
     id: "cs",
-    chapter: "Node 02",
+    chapter: "",
     title: "Applied CS & Research",
-    subtitle: "AI tools for small businesses and public health",
+    subtitle: "",
     blurb:
-      "From IntelliEase AI to SoulMender and my AP Research project on predicting drug recalls, I like working where technical models meet real constraints, whether that involves workflow, ethics, or adoption.",
+      "I've worked on market sizing, customer meetings, and model development at IntelliEase AI; prototyped model and designed website at SoulMender; and trained a sentiment model estimating drug-recall timing for AP Research.",
     statLabel: "major projects",
     statValue: "3+",
     accent: "from-cyan-200/80 to-teal-200/80",
   },
   {
     id: "breath",
-    chapter: "Node 03",
+    chapter: "",
     title: "Breath & Stress Management",
-    subtitle: "Teaching SKY breathwork to students and educators",
+    subtitle: "",
     blurb:
-      "As a youth ambassador for Art of Living/SKY Schools, I speak with educators and students about practical breathing techniques that reduce stress and increase capacity, from keynotes to classroom workshops.",
+      "Outside of work, I'm passionate about sharing the techniques that have helped me increase my capacity and decrease my stress: breathing! I've delivered keynote speeches to educators on the importance of such techniques in schools and have facilitated workshops for students locally.",
     statLabel: "people reached",
     statValue: "1k+",
     accent: "from-emerald-200/80 to-lime-200/80",
@@ -269,7 +269,7 @@ const ABOUT_CHAPTERS = [
     title: "Arts & Community",
     subtitle: "Bharatanatyam, music, and cultural spaces",
     blurb:
-      "Classical dance and music keep me grounded. My Arangetram, World Culture Festival performance, and community shows highlight how discipline and joy can coexist on the same stage.",
+      "My heritage and community is incredibly important to me: I am a proud Bharatanatyam (South Indian Classical Dance) Soloist, performing on stages from the National Mall in DC to my backyard for my family!",
     statLabel: "years training",
     statValue: "12",
     accent: "from-rose-200/80 to-purple-200/80",
