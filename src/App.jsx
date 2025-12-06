@@ -538,7 +538,7 @@ const BUSINESS = [
     details: [
       "National Secretary:",
       "   - Elected to serve as student executive leading BPA's 60,000-member Secondary Division.",
-      "   - Launhed cross-state Buddy System program connecting international, national, and state chapters to foster collaboration and mentorship.",
+      "   - Launched cross-state Buddy System program connecting international, national, and state chapters to foster collaboration and mentorship.",
       "   - Revamped Student Certification Series and co-designed the Student Leadership Summit, strengthening leadership and personal development through leading workshops on communication and branding.",
       "Florida State President",
       "   - Managed 1,500-member state association; grew membership by 54% through targeted chapter support and outreach initiatives.",
