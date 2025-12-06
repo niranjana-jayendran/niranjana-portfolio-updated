@@ -420,7 +420,6 @@ const AboutBookshelf = () => {
                   key={chapter.id + "-node"}
                   type="button"
                   onClick={() => setActiveId(chapter.id)}
-                  whileHover={{ scale: 1.03, y: -1 }}
                   className={classNames(
                     "absolute flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[0.65rem] backdrop-blur-sm transition",
                     "border-cyan-300/60 bg-slate-900/85",
