@@ -72,7 +72,7 @@ const Chip = ({ children, active, onClick }) => (
     className={classNames(
       "px-3 py-1 rounded-full text-sm border transition",
       active
-        ? "bg-black/80 text-white border-black/80"
+        ? "bg-sky-500 text-white border-sky-500"
         : "bg-white/70 backdrop-blur border-black/10 hover:bg-white"
     )}
   >
@@ -85,8 +85,10 @@ const Section = ({ id, title, icon: Icon, children, right }) => (
     <div className="max-w-6xl mx-auto px-4">
       <div className="flex items-start justify-between gap-6">
         <div className="flex items-center gap-3">
-          {Icon && <Icon className="h-6 w-6 opacity-70" />}
-          <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+          {Icon && <Icon className="h-6 w-6 opacity-70 text-sky-200" />}
+          <h2 className="text-2xl font-semibold tracking-tight text-sky-100">
+            {title}
+          </h2>
         </div>
         {right}
       </div>
@@ -671,10 +673,12 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* LEFT: text */}
           <div>
-            <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight text-sky-50">
               {ABOUT.name}
             </h1>
-            <p className="mt-2 text-lg opacity-80">{ABOUT.tagline}</p>
+            <p className="mt-2 text-lg text-slate-200">
+              {ABOUT.tagline}
+            </p>
 
             {(ABOUT.highlights ?? []).length > 0 && (
               <ul className="mt-6 space-y-2 text-sm">
