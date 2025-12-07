@@ -98,9 +98,9 @@ const Section = ({ id, title, icon: Icon, children, right }) => (
 );
 
 const Background = () => {
-  const COLS = 60;
-  const ROWS = 40; 
-  const trail = 12;
+  const COLS = 96;
+  const ROWS = 80;
+  const trail = 10;
 
   const [heads, setHeads] = useState(() =>
     Array.from({ length: COLS }, () => Math.floor(Math.random() * ROWS))
@@ -126,41 +126,40 @@ const Background = () => {
   const columns = Array.from({ length: COLS });
 
   return (
-    <div className="fixed inset-0 -z-10 bg-slate-950 overflow-hidden">
+    <div className="fixed inset-0 -z-10 bg-[#2d6ea8] overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 15% 0%, #020617 0, transparent 55%)," +
-            "radial-gradient(circle at 85% 10%, #020617 0, transparent 55%)," +
-            "radial-gradient(circle at 50% 80%, #020617 10%, #020617 60%)",
+            "radial-gradient(circle at 15% 0%, #295f95 0, transparent 55%)," +
+            "radial-gradient(circle at 85% 10%, #295f95 0, transparent 55%)," +
+            "radial-gradient(circle at 50% 80%, #234d7a 10%, #234d7a 60%)",
         }}
       />
 
-      {/* Animated binary cascades with fixed slots per column */}
       <svg
         className="absolute inset-0 opacity-70"
         viewBox="0 0 1200 800"
         preserveAspectRatio="none"
       >
         {columns.map((_, i) => {
-          const x = 10 + (i / (COLS - 1)) * 1180; 
+          const x = 8 + (i / (COLS - 1)) * 1184; 
           const head = heads[i];
 
           return (
             <g key={i} transform={`translate(${x}, 0)`}>
               {Array.from({ length: ROWS }).map((_, j) => {
-                const y = 12 + j * 18; 
+                const y = 6 + j * 10; 
                 const distance = (ROWS + head - j) % ROWS;
 
                 if (distance > trail) {
-                  const dimAlpha = 0.07;
+                  const dimAlpha = 0.04;
                   return (
                     <text
                       key={j}
                       x={0}
                       y={y}
-                      fontSize={12}
+                      fontSize={7}
                       fontFamily="Menlo, ui-monospace, SFMono-Regular"
                       fill={`rgba(148, 208, 255, ${dimAlpha})`}
                     >
@@ -169,13 +168,13 @@ const Background = () => {
                   );
                 }
 
-                const t = 1 - distance / trail; // 0..1
-                const alpha = 0.18 + t * 0.7;
-                const size = 9 + t * 3; 
+                const t = 1 - distance / trail; 
+                const alpha = 0.12 + t * 0.32;
+                const size = 7 + t * 1.5; 
                 const neon = distance === 0;
 
                 const color = neon
-                  ? "#7DF9FF" 
+                  ? "#8BF6FF" 
                   : `rgba(148, 208, 255, ${alpha})`;
 
                 return (
@@ -197,10 +196,10 @@ const Background = () => {
       </svg>
 
       <div
-        className="absolute inset-0 opacity-35 pointer-events-none"
+        className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(2,6,23,0.85) 0, transparent 30%, transparent 70%, rgba(2,6,23,0.9) 100%)",
+            "linear-gradient(to bottom, rgba(15,23,42,0.65) 0%, transparent 30%, transparent 70%, rgba(15,23,42,0.7) 100%)",
         }}
       />
     </div>
