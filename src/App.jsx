@@ -28,7 +28,6 @@ function openResumePdf() {
   window.open(resumePdf, "_blank", "noopener,noreferrer");
 };
 
-// Lightweight UI primitives
 const Button = ({ children, variant = "default", size = "md", asChild, ...props }) => {
   const base =
     "inline-flex items-center justify-center rounded-2xl border transition px-3 py-2 text-sm";
@@ -96,69 +95,119 @@ const Section = ({ id, title, icon: Icon, children, right }) => (
   </section>
 );
 
-// Background (colorful wash + pencil sketch lines)
-const PencilSketchBackground = () => (
-  <svg
-    className="absolute inset-0 -z-10 w-full h-full"
-    style={{ opacity: 0.06 }}
-    viewBox="0 0 1200 800"
-    preserveAspectRatio="none"
-  >
-    {[
-      "M40 120 C 200 40, 360 200, 520 120",
-      "M80 280 C 240 220, 360 360, 540 280",
-      "M720 140 C 880 90, 1000 210, 1160 160",
-      "M120 520 C 260 470, 390 560, 560 520",
-      "M640 560 C 780 520, 940 620, 1140 580",
-    ].map((d, i) => (
-      <path
-        key={i}
-        d={d}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeDasharray="5 9"
-      >
-        <animate
-          attributeName="stroke-dashoffset"
-          values="0;16"
-          dur={`${4 + i}s`}
-          repeatCount="indefinite"
-        />
-      </path>
-    ))}
-  </svg>
-);
+const Background = () => {
+  const COLS = 60;
+  const ROWS = 34;
+  const trail = 12;
 
-const Background = () => (
-  <div className="fixed inset-0 -z-10">
-    <style>{`@keyframes spinSlow { to { transform: rotate(1turn); } }`}</style>
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "radial-gradient(1200px 600px at 15% 20%, rgba(255, 182, 193, 0.35), transparent 60%)," +
-          "radial-gradient(900px 500px at 85% 15%, rgba(147, 197, 253, 0.35), transparent 55%)," +
-          "radial-gradient(1000px 800px at 50% 85%, rgba(167, 243, 208, 0.35), transparent 55%)," +
-          "linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.9))",
-      }}
-    />
-    <div
-      className="absolute blur-3xl"
-      style={{
-        inset: "-20%",
-        opacity: 0.35,
-        background:
-          "conic-gradient(from 180deg at 50% 50%, rgba(255, 0, 128, 0.35), rgba(255, 166, 0, 0.35), rgba(0, 212, 255, 0.35), rgba(147, 51, 234, 0.35), rgba(255, 0, 128, 0.35))",
-        animation: "spinSlow 80s linear infinite",
-        willChange: "transform",
-        pointerEvents: "none",
-      }}
-    />
-    <PencilSketchBackground />
-  </div>
-);
+  const [heads, setHeads] = useState(() =>
+    Array.from({ length: COLS }, () => Math.floor(Math.random() * ROWS))
+  );
+
+  const digits = useMemo(
+    () =>
+      Array.from({ length: COLS }, (_, i) =>
+        Array.from({ length: ROWS }, (_, j) =>
+          ((i * 17 + j * 31 + 7) % 2).toString()
+        )
+      ),
+    []
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeads((prev) => prev.map((h) => (h + 1) % ROWS));
+    }, 140);
+    return () => clearInterval(interval);
+  }, []);
+
+  const columns = Array.from({ length: COLS });
+
+  return (
+    <div className="fixed inset-0 -z-10 bg-slate-950 overflow-hidden">
+      {/* deep navy wash behind digits */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 15% 0%, #020617 0, transparent 55%)," +
+            "radial-gradient(circle at 85% 10%, #020617 0, transparent 55%)," +
+            "radial-gradient(circle at 50% 80%, #020617 10%, #020617 60%)",
+        }}
+      />
+
+      {/* binary columns with fixed slots */}
+      <svg
+        className="absolute inset-0 opacity-70"
+        viewBox="0 0 1200 800"
+        preserveAspectRatio="none"
+      >
+        {columns.map((_, i) => {
+          const x = 10 + (i / (COLS - 1)) * 1180;
+          const head = heads[i];
+
+          return (
+            <g key={i} transform={`translate(${x}, 0)`}>
+              {Array.from({ length: ROWS }).map((_, j) => {
+                const y = 14 + j * 22;
+                const distance = (ROWS + head - j) % ROWS;
+
+                // faint background digit when trail stays away
+                if (distance > trail) {
+                  const dimAlpha = 0.08;
+                  return (
+                    <text
+                      key={j}
+                      x={0}
+                      y={y}
+                      fontSize={12}
+                      fontFamily="Menlo, ui-monospace, SFMono-Regular"
+                      fill={`rgba(148, 208, 255, ${dimAlpha})`}
+                    >
+                      {digits[i][j]}
+                    </text>
+                  );
+                }
+
+                // trail digits, brighter near head
+                const t = 1 - distance / trail; // 0..1
+                const alpha = 0.2 + t * 0.8;
+                const size = 12 + t * 4;
+                const neon = distance === 0;
+
+                const color = neon
+                  ? "#7DF9FF" // fluorescent head
+                  : `rgba(148, 208, 255, ${alpha})`;
+
+                return (
+                  <text
+                    key={j}
+                    x={0}
+                    y={y}
+                    fontSize={size}
+                    fontFamily="Menlo, ui-monospace, SFMono-Regular"
+                    fill={color}
+                  >
+                    {digits[i][j]}
+                  </text>
+                );
+              })}
+            </g>
+          );
+        })}
+      </svg>
+
+      {/* soft vertical vignette so content stays readable */}
+      <div
+        className="absolute inset-0 opacity-35 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(2,6,23,0.85) 0, transparent 30%, transparent 70%, rgba(2,6,23,0.9) 100%)",
+        }}
+      />
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -600,7 +649,6 @@ const AWARDS = [
   { title: "AP Scholar with Distinction", organization: "College Board", level: "National", grade: "11th grade", notes: "Awarded for scores of all 4s and 5s in 7 AP exams, demonstrating mastery across disciplines."},
   { title: "National Merit Semifinalist", organization: "National Merit Scholarship Corporation", level: "National", grade: "12th grade", notes: "Recognized as top 1% of U.S high school students based on PSAT/NMSQT score; received a perfect 1520 (99th percentile)."},
 ];
-//note: fix the grade system- reinstate the year and add grade as another category?
 
 const TABS = [
   { id: "Computer Science", icon: Cpu, label: "Computer Science" },
