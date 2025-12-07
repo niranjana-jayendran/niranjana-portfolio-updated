@@ -97,7 +97,7 @@ const Section = ({ id, title, icon: Icon, children, right }) => (
 
 const Background = () => {
   const COLS = 60;
-  const ROWS = 34;
+  const ROWS = 40; 
   const trail = 12;
 
   const [heads, setHeads] = useState(() =>
@@ -125,7 +125,6 @@ const Background = () => {
 
   return (
     <div className="fixed inset-0 -z-10 bg-slate-950 overflow-hidden">
-      {/* deep navy wash behind digits */}
       <div
         className="absolute inset-0"
         style={{
@@ -136,25 +135,24 @@ const Background = () => {
         }}
       />
 
-      {/* binary columns with fixed slots */}
+      {/* Animated binary cascades with fixed slots per column */}
       <svg
         className="absolute inset-0 opacity-70"
         viewBox="0 0 1200 800"
         preserveAspectRatio="none"
       >
         {columns.map((_, i) => {
-          const x = 10 + (i / (COLS - 1)) * 1180;
+          const x = 10 + (i / (COLS - 1)) * 1180; 
           const head = heads[i];
 
           return (
             <g key={i} transform={`translate(${x}, 0)`}>
               {Array.from({ length: ROWS }).map((_, j) => {
-                const y = 14 + j * 22;
+                const y = 12 + j * 18; 
                 const distance = (ROWS + head - j) % ROWS;
 
-                // faint background digit when trail stays away
                 if (distance > trail) {
-                  const dimAlpha = 0.08;
+                  const dimAlpha = 0.07;
                   return (
                     <text
                       key={j}
@@ -169,14 +167,13 @@ const Background = () => {
                   );
                 }
 
-                // trail digits, brighter near head
                 const t = 1 - distance / trail; // 0..1
-                const alpha = 0.2 + t * 0.8;
-                const size = 12 + t * 4;
+                const alpha = 0.18 + t * 0.7;
+                const size = 9 + t * 3; 
                 const neon = distance === 0;
 
                 const color = neon
-                  ? "#7DF9FF" // fluorescent head
+                  ? "#7DF9FF" 
                   : `rgba(148, 208, 255, ${alpha})`;
 
                 return (
@@ -197,7 +194,6 @@ const Background = () => {
         })}
       </svg>
 
-      {/* soft vertical vignette so content stays readable */}
       <div
         className="absolute inset-0 opacity-35 pointer-events-none"
         style={{
